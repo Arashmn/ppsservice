@@ -21,18 +21,18 @@ return new class extends Migration
             $table->enum('sex', ['male', 'female']);
             $table->string('code_meli');
             $table->string('mobile_number');
-            $table->string('email');
-            $table->string('birthday');
-            $table->string('password');
-            $table->string('ip');
-            $table->string('address');
-            $table->string('department_id');
-            $table->string('path');
+            $table->string('email')->nullable();
+            $table->string('birthday')->nullable();
+            $table->string('password')->nullable();
+            $table->string('ip')->nullable();
+            $table->string('address')->nullable();
+            $table->string('department_id')->nullable();
+            $table->string('path')->nullable();
             $table->rememberToken();
             $table->timestamp('email_verified_at')->nullable();
             $table->timestamps();
 
-            $table->unique(['mobile_number', 'code_meli']);
+            $table->unique(['mobile_number', 'code_meli','email']);
         });
     }
 

@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
 {
@@ -15,21 +16,28 @@ return new class extends Migration
     {
         Schema::create('persons', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('users_id')->constrained()->nullOnDelete();
-            $table->foreignId('offices_id')->constrained()->nullOnDelete();
-            $table->foreignId('marktings_id')->constrained()->nullOnDelete();
+            $table->foreignId('users_id')->constrained();
+            $table->foreignId('offices_id')->nullable()->constrained();
+            $table->foreignId('marktings_id')->nullable()->constrained();
+            $table->string('car_name')->nullable();
             $table->string('car_numberEngine');
             $table->string('car_chassis');
-            $table->string('car_year');
-            $table->string('ins_type');
-            $table->string('ins_company');
+            $table->string('car_year')->nullable();
+            $table->string('car_color')->nullable();
+            $table->string('ins_type')->nullable();
+            $table->string('ins_company')->nullable();
             $table->string('ins_serialNumber');
-            $table->string('ins_premium');
-            $table->string('ins_expire');
-            $table->string('pic_car');
-            $table->string('pic_license');
-            $table->string('pic_ins');
+            $table->string('ins_premium')->nullable();
+            $table->string('ins_expire')->nullable();
+            $table->string('pic_car')->nullable();
+            $table->string('pic_license')->nullable();
+            $table->string('pic_ins')->nullable();
             $table->timestamps();
+
+            DB::raw('ALTER TABLE persons AUTO_INCREMENT = 50000');
+
+
+            $table->unique(['car_numberEngine','car_chassis','ins_serialNumber']);
         });
     }
 
