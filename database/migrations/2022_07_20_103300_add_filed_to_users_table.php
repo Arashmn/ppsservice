@@ -13,12 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('reincident_user', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('users_id')->constrained();
-            $table->foreignId('office_id')->constrained('offices');
-            $table->foreignId('reincidents_id')->constrained('reincidents');
-            $table->string('level');
+        Schema::table('users', function (Blueprint $table) {
+              $table->foreignId('agent_id')->nullable()->after('is_staff')->constrained('offices');
+
         });
     }
 
@@ -29,6 +26,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reincident_user');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropForeign('agent_id');
+            $table->dropColumn('agent_id');
+        });
     }
 };

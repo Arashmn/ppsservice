@@ -15,15 +15,19 @@ return new class extends Migration
     public function up()
     {
         Schema::create('offices', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('users_id')->constrained();
+            $table->id()->startingValue(100100);
+            $table->foreignId('user_id')->constrained();
             $table->string('type')->nullable();
+            $table->string('company')->nullable();
+            $table->string('service')->nullable();
             $table->string('title')->nullable();
             $table->string('management')->nullable();
             $table->string('license_number')->nullable();
             $table->string('agent_code')->nullable();
             $table->string('work_history')->nullable();
             $table->string('area')->nullable();
+            $table->string('cooperate')->nullable();
+            $table->string('contract')->nullable();
             $table->string('apprentice')->nullable();
             $table->string('address_office')->nullable();
             $table->string('phone_office')->nullable();
@@ -31,9 +35,8 @@ return new class extends Migration
             $table->enum('is_parking',['پارکینگ دارم','پارکینگ ندارم']);
             $table->string('license_file')->nullable();
             $table->string('image_file')->nullable();
+            $table->string('accept')->nullable();
             $table->timestamps();
-
-            DB::raw('ALTER TABLE offices AUTO_INCREMENT = 100100');
 
             $table->unique(['license_number','agent_code']);
         });

@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
+            $table->id()->startingValue(50000);
             $table->string('name');
             $table->string('family');
             $table->string('father');
@@ -24,15 +24,17 @@ return new class extends Migration
             $table->string('email')->nullable();
             $table->string('birthday')->nullable();
             $table->string('password')->nullable();
-            $table->string('ip')->nullable();
             $table->string('address')->nullable();
             $table->string('department_id')->nullable();
-            $table->string('path')->nullable();
-            $table->rememberToken();
+            $table->boolean('is_staff')->default(0);
+            $table->string('moaref')->nullable();
+            $table->string('pic')->nullable();
+            $table->string('accept')->nullable();
             $table->timestamp('email_verified_at')->nullable();
+            $table->rememberToken();
             $table->timestamps();
 
-            $table->unique(['mobile_number', 'code_meli','email']);
+            $table->unique(['mobile_number', 'code_meli']);
         });
     }
 

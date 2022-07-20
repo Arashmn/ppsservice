@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('coupons', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('users_id')->constrained();
+            $table->foreignId('user_id')->constrained();
             $table->string('code')->nullable();
             $table->string('percent')->nullable();
             $table->string('limit')->nullable();

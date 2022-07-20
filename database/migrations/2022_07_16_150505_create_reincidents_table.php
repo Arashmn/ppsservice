@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('reincidents', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('users_id')->constrained();
-            $table->foreignId('customer_id')->constrained('persons');
+            $table->foreignId('user_id')->constrained();
+            $table->foreignId('customer_id')->constrained('users');
             $table->string('tracking_code')->unique();
             $table->string('title')->nullable();
             $table->string('start_date')->nullable();
