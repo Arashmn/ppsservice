@@ -6,7 +6,7 @@ return [
     'title'=>[
 
         'title index'=>'صفحه اصلی ',
-        'title users'=>'صفحه کاربران',
+        'title users'=>'صفحه اعضاء',
         'title user create'=>' اضافه کردن کارمند',
         'title register user'=>'عضویت در سامانه',
         'title Login'=>'ورود به سامانه',

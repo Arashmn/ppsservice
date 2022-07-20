@@ -15,6 +15,8 @@ return [
             'code_meli'=>'کد ملی',
             'birthday'=>'تاریخ  تولد',
             'email'=>'ایمیل',
+            'sex'=>'جنسیت',
+            'email'=>'ایمیل',
             'roles'=>'نقش',
             'actions'=>'عملیات',
         ],

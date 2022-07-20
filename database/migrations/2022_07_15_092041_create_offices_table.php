@@ -31,8 +31,8 @@ return new class extends Migration
             $table->string('apprentice')->nullable();
             $table->string('address_office')->nullable();
             $table->string('phone_office')->nullable();
-            $table->enum('is_owner',['مالک هستم','مستاجر هستم']);
-            $table->enum('is_parking',['پارکینگ دارم','پارکینگ ندارم']);
+            $table->string('is_owner')->nullable();
+            $table->string('is_parking')->nullable();
             $table->string('license_file')->nullable();
             $table->string('image_file')->nullable();
             $table->string('accept')->nullable();

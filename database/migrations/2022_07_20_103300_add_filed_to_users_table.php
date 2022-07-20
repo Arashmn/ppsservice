@@ -28,7 +28,6 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->dropForeign('agent_id');
-            $table->dropColumn('agent_id');
         });
     }
 };
