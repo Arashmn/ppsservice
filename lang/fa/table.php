@@ -6,6 +6,7 @@ return [
 
         'search filter'=>'فیلتر کردن نقش ',
         'user list'=>'لیست کاربران',
+        'add user'=>'اعضاء جدید',
 
         'users'=>[
             'name'=>'نام',

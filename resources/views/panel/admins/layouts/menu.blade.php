@@ -38,7 +38,7 @@
             </a>
             <ul class="menu-sub">
                 <li class="menu-item  {{ isActiveSubMenu(['admin.admins.users.index'])}} ">
-                    <a href="/" class="menu-link">
+                    <a href="{{ route('users.index') }}" class="menu-link">
                         <div data-i18n="Analytics">@lang('public.menu.user.Employee')</div>
                     </a>
                 </li>

@@ -1,5 +1,5 @@
     <!-- Core JS -->
-    <!-- build:js admin/vendor/js/core.js -->
+    <!-- build:js assets/vendor/js/core.js -->
     <script src="{{ asset('assets/panel/vendor/libs/jquery/jquery.js') }}"></script>
     <script src="{{ asset('assets/panel/vendor/libs/popper/popper.js') }}"></script>
     <script src="{{ asset('assets/panel/vendor/js/bootstrap.js') }}"></script>
@@ -7,8 +7,8 @@
     <script src="{{ asset('assets/panel/vendor/libs/hammer/hammer.js') }}"></script>
     <script src="{{ asset('assets/panel/vendor/libs/typeahead-js/typeahead.js') }}"></script>
     <script src="{{ asset('assets/panel/vendor/js/menu.js') }}"></script>
-    {{-- <script src="{{ asset('admin/js/loder/mainscripts.bundle.js') }}"></script>
-    <script src="{{ asset('admin/js/loder/vendorscripts.bundle.js') }}"></script> --}}
+    {{-- <script src="{{ asset('assets/js/loder/mainscripts.bundle.js') }}"></script>
+    <script src="{{ asset('assets/js/loder/vendorscripts.bundle.js') }}"></script> --}}
     <!-- endbuild -->
 
     <!-- Vendors JS -->

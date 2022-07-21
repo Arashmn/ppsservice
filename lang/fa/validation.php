@@ -151,7 +151,7 @@ return [
     */
     'attributes' => [
         "name" => "نام",
-        "father" => "نام",
+        "father" => "نام پدر",
         "code_meli" => "کد ملی",
         "username" => "نام کاربری",
         "birthday" => "تاریخ تولد",
@@ -189,5 +189,8 @@ return [
 		"fullname" => "نام کامل",
         "mobile"=>'شماره موبایل',
         "rules"=>'قوانین',
+        "car_number"=>'شماره موتور خودرو',
+        "car_chassis"=>'شماره شاسی خودرو',
+        "ins_serialNumber"=>'شماره بیمه',
     ],
 ];

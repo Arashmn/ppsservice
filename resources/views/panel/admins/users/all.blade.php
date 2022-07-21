@@ -1,6 +1,7 @@
 @extends('panel.admins.layouts.master')
 @section('title', __('public.title.title users'))
 @section('vendor-css')
+
     <link rel="stylesheet" href="{{ asset('assets/panel/vendor/libs/datatables-bs5/datatables.bootstrap5.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/panel/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/panel/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.css') }}">
@@ -101,7 +102,7 @@
                     </div>
                 </div>
                 <div class="float-right">
-                    <a href="/" class="btn btn-primary text-white">کارمند جدید</a>
+                    <a href="{{ route('users.create') }}" class="btn btn-primary text-white" style="margin-right: 994px">@lang('table.Dadatable.add user')</a>
                 </div>
                 <div class="d-flex justify-content-between align-items-center row py-3 gap-3 gap-md-0">
                     <div class="col-md-4 user_role"></div>
@@ -110,12 +111,13 @@
                 </div>
             </div>
             <div class="card-datatable table-responsive">
-                <table class="datatables-users table border-top" id="getUsers">
+                <table class="datatables-users table border-top" id="getUser">
                     <thead>
                         <tr>
                             <th>#</th>
                             <th>@lang('table.Dadatable.users.name')</th>
                             <th>@lang('table.Dadatable.users.family')</th>
+                            <th>@lang('table.Dadatable.users.father')</th>
                             <th>@lang('table.Dadatable.users.code_meli')</th>
                             <th>@lang('table.Dadatable.users.mobile')</th>
                             <th>@lang('table.Dadatable.users.email')</th>
@@ -130,11 +132,12 @@
                                 <td>{{ $user->id }}</td>
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->family }}</td>
+                                <td>{{ $user->father  }}</td>
                                 <td>{{ $user->code_meli }}</td>
                                 <td>{{ $user->mobile_number }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td>{{ $user->sex }}</td>
-                                <td>{{ $user->name }}</td>
+                                {{-- <td>{{ $user->name }}</td> --}}
 
                                 {{-- <td>
                                     @foreach ($user->roles as $role)
@@ -166,25 +169,10 @@
     </div>
 @endsection
 @section('vendor-js')
-    <script src="{{ asset('assets/panel/vendor/libs/moment/moment.js') }}"></script>
-    <script src="{{ asset('assets/panel/vendor/libs/datatables/jquery.dataTables.js') }}"></script>
-    <script src="{{ asset('assets/panel/vendor/libs/datatables/i18n/fa.js') }}"></script>
+<script src="{{ asset('assets/panel/vendor/libs/datatables/jquery.dataTables.js') }}"></script>
     <script src="{{ asset('assets/panel/vendor/libs/datatables-bs5/datatables-bootstrap5.js') }}"></script>
     <script src="{{ asset('assets/panel/vendor/libs/datatables-responsive/datatables.responsive.js') }}"></script>
     <script src="{{ asset('assets/panel/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.js') }}"></script>
-    <script src="{{ asset('assets/panel/vendor/libs/datatables-buttons/datatables-buttons.js') }}"></script>
-    <script src="{{ asset('assets/panel/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.js') }}"></script>
-    <script src="{{ asset('assets/panel/vendor/libs/jszip/jszip.js') }}"></script>
-    <script src="{{ asset('assets/panel/vendor/libs/pdfmake/pdfmake.js') }}"></script>
-    <script src="{{ asset('assets/panel/vendor/libs/datatables-buttons/buttons.html5.js') }}"></script>
-    <script src="{{ asset('assets/panel/vendor/libs/datatables-buttons/buttons.print.js') }}"></script>
-    <script src="{{ asset('assets/panel/vendor/libs/select2/select2.js') }}"></script>
-    <script src="{{ asset('assets/panel/vendor/libs/select2/i18n/fa.js') }}"></script>
-    <script src="{{ asset('assets/panel/vendor/libs/formvalidation/dist/js/FormValidation.min.js') }}"></script>
-    <script src="{{ asset('assets/panel/vendor/libs/formvalidation/dist/js/plugins/Bootstrap5.min.js') }}"></script>
-    <script src="{{ asset('assets/panel/vendor/libs/formvalidation/dist/js/plugins/AutoFocus.min.js') }}"></script>
-    <script src="{{ asset('assets/panel/vendor/libs/cleavejs/cleave.js') }}"></script>
-    <script src="{{ asset('assets/panel/vendor/libs/cleavejs/cleave-phone.js') }}"></script>
 @endsection
 
 @section('page-js')
@@ -208,9 +196,9 @@
                 });
         }
         $(document).ready(function() {
-            $('#getUsers').DataTable({
+            $('#getUser').DataTable({
                 initComplete: function() {
-                    this.api().columns(2).every(function() {
+                    this.api().columns(3).every(function() {
                         var column = this;
                         var select = $(
                                 '<select class="form-control"><option value="">همه</option></select>'
