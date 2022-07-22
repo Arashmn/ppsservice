@@ -31,23 +31,28 @@
             </a>
         </li>
         <!-- users -->
-        <li class="menu-item {{ isActive(['admin.admins.users.index'])}}">
+        <li class="menu-item {{ isActive(['admin.admins.users.index']) }}">
             <a href="" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-user"></i>
                 <div data-i18n="Page 2">@lang('public.menu.user.person')</div>
             </a>
             <ul class="menu-sub">
-                <li class="menu-item  {{ isActiveSubMenu(['admin.admins.users.index'])}} ">
+                <li class="menu-item  ">
+                    <a href="/" class="menu-link">
+                        <div data-i18n="Analytics">@lang('public.menu.user.members')</div>
+                    </a>
+                </li>
+                <li class="menu-item  {{ isActiveSubMenu(['admin.admins.users.index']) }} ">
                     <a href="{{ route('users.index') }}" class="menu-link">
                         <div data-i18n="Analytics">@lang('public.menu.user.Employee')</div>
                     </a>
                 </li>
-
                 <li class="menu-item  ">
                     <a href="/" class="menu-link">
                         <div data-i18n="Analytics">@lang('public.menu.user.role')</div>
                     </a>
                 </li>
+
                 {{-- {{ isActiveSubMenu([ 'admin.users.create' ])}} --}}
                 <li class="menu-item  ">
                     <a href="/" class="menu-link ">
@@ -57,7 +62,7 @@
             </ul>
             {{-- {{ isActive(['admin.permissions.index', 'admin.permissions.create' ])}} --}}
 
-            <!-- services -->
+        <!-- services -->
         <li class="menu-item ">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class='menu-icon tf-icons bx bxs-factory'></i>
@@ -78,6 +83,8 @@
                 </li>
             </ul>
         </li>
+
+
         <!-- agent -->
         <li class="menu-item ">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
@@ -99,6 +106,8 @@
                 </li>
             </ul>
         </li>
+
+
 
         <!-- marketers -->
         <li class="menu-item ">
@@ -123,8 +132,8 @@
             </ul>
         </li>
 
-         <!-- branch -->
-         <li class="menu-item ">
+        <!-- branch -->
+        <li class="menu-item ">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-store""></i>
                 <div data-i18n="Roles & Permissions">@lang('public.menu.branch.branchs')</div>
@@ -149,8 +158,8 @@
 
         <li class="menu-item ">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class='menu-icon tf-icons bx bx-bar-chart-alt-2' ></i>
-                                <div data-i18n="Roles & Permissions">@lang('public.menu.census.census')</div>
+                <i class='menu-icon tf-icons bx bx-bar-chart-alt-2'></i>
+                <div data-i18n="Roles & Permissions">@lang('public.menu.census.census')</div>
             </a>
 
             <ul class="menu-sub">

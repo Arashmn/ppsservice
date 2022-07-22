@@ -14,7 +14,7 @@ class UserController extends Controller
     public function index()
     {
 
-        $users=User::all();
+        $users=User::where('is_staff',1)->get();
         return view('panel.admins.users.all',compact('users'));
 
     }

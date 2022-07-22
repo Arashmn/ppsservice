@@ -6,12 +6,15 @@ return [
     'title'=>[
 
         'title index'=>'صفحه اصلی ',
-        'title users'=>'صفحه اعضاء',
+        'title users'=>'صفحه کارمند',
+        'title members'=>'صفحه اعضاء',
         'title user create'=>' اضافه کردن کارمند',
         'title register user'=>'عضویت در سامانه',
         'title Login'=>'ورود به سامانه',
-        'title add'=>'اعضاء جدید',
-        'register add user'=>'اضافه کردن عضو جدید',
+        'title add'=>'کارمند جدید',
+        'title member'=>'عضو جدید',
+        'register add user'=>'اضافه کردن کارمند جدید',
+        'member add user'=>'اضافه کردن عضو جدید',
     ],
 
     'menu'=>[
@@ -20,10 +23,12 @@ return [
         'dashboard'=>'داشبور',
         'user'=>[
             'person'=>'کاربران',
-            'Employee'=>'اعضاء',
+            'Employee'=>'کارمندان',
+            'members'=>'اعضاء',
             'role'=>'سمت ها',
             'permission'=>'دسترسی ها',
         ],
+
         'service'=>[
             'centers&&content'=>'مراکز طرف قرارداد',
             'center car'=>'مراکز خودرو',

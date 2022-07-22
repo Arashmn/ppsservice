@@ -16,19 +16,19 @@ return new class extends Migration
         Schema::create('car_ins', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained();
-            $table->string('car_name');
-            $table->string('car_tage');
+            $table->string('car_name')->nullable();
+            $table->string('car_tage')->nullable();;
             $table->string('car_number');
             $table->string('car_chassis');
-            $table->string('car_year');
-            $table->string('ins_type');
-            $table->string('ins_company');
+            $table->string('car_year')->nullable();;
+            $table->string('ins_type')->nullable();;
+            $table->string('ins_company')->nullable();;
             $table->string('ins_serialNumber');
-            $table->string('ins_premium');
-            $table->string('ins_expire');
-            $table->string('pic_car');
-            $table->string('pic_license');
-            $table->string('pic_inss');
+            $table->string('ins_premium')->nullable();;
+            $table->string('ins_expire')->nullable();;
+            $table->string('pic_car')->nullable();;
+            $table->string('pic_license')->nullable();;
+            $table->string('pic_inss')->nullable();;
             $table->unique(['car_number', 'car_chassis','ins_serialNumber']);
 
             $table->timestamps();
