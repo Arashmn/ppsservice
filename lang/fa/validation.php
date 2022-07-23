@@ -192,5 +192,10 @@ return [
         "car_number"=>'شماره موتور خودرو',
         "car_chassis"=>'شماره شاسی خودرو',
         "ins_serialNumber"=>'شماره بیمه',
+        "license_number"=>'شماره پروانه کسب  ',
+        "type"=>'نوع خدمت',
+        "is_parking"=>'پارکینگ',
+        "is_owner"=>'مالکیت مرکز',
+        "management"=>'نام مدیر',
     ],
 ];

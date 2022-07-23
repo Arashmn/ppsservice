@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\CustomerController;
+use App\Http\Controllers\Admin\OfficeController;
 use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::resource('customers',CustomerController::class);
 Route::resource('users',UserController::class);
+Route::resource('offices',OfficeController::class);
 // Route::get('/',[UserController::class,'index']);
 
 Route::get('/dashboard', function () {

@@ -150,7 +150,7 @@
             </div>
             <div class="pt-4">
                 <button type="submit" class="btn btn-primary me-sm-3 me-1">ثبت</button>
-                <a href="{{ route('users.index') }}"><button type="reset" class="btn btn-label-secondary">انصراف</button></a>
+                <a href="{{ route('users.index') }}" class="btn btn-label-secondary" >انصراف</a>
             </div>
         </form>
     </div>

@@ -10,6 +10,20 @@ class car_ins extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'car_name',
+        'car_year',
+        'car_tage',
+        'car_number',
+        'car_chassis',
+        'ins_type',
+        'ins_company',
+        'ins_serialNumber',
+        'ins_premium',
+        'ins_expire',
+        'user_id'
+    ];
+
     public function user()
     {
 

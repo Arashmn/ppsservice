@@ -4,7 +4,7 @@ namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UserRequest extends FormRequest
+class officeRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,6 +24,7 @@ class UserRequest extends FormRequest
     public function rules()
     {
         return [
+
             'name'=>'required',
             'family'=>'required',
             'father'=>'required',
@@ -33,16 +34,18 @@ class UserRequest extends FormRequest
             'mobile_number'=>'required|unique:users|numeric|digits:11|regex:/(09)[0-9]{9}/',
             'birthday'=>'nullable',
             'address'=>'nullable',
-            'car_name'=>'nullable',
-            'car_year'=>'nullable',
-            'car_tage'=>'nullable',
-            'car_number'=>'required|unique:car_ins|',
-            'car_chassis'=>'required|unique:car_ins|',
-            'ins_type'=>'nullable',
-            'ins_company'=>'nullable',
-            'ins_serialNumber'=>'required|unique:car_ins|',
-            'ins_premium'=>'nullable',
-            'ins_expire'=>'nullable',
+            'title'=>'required',
+            'management'=>'required',
+            'license_number'=>'required|unique:offices',
+            'work_history'=>'nullable',
+            'area'=>'nullable',
+            'apprentice'=>'nullable',
+            'phone_office'=>'nullable',
+            'address_office'=>'nullable',
+            'type'=>'required',
+            'is_parking'=>'required',
+            'is_owner'=>'required',
+
         ];
     }
 }

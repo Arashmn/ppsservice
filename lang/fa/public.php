@@ -7,7 +7,9 @@ return [
 
         'title index'=>'صفحه اصلی ',
         'title users'=>'صفحه کارمند',
+        'title offices'=>'صفحه مراکز',
         'title members'=>'صفحه اعضاء',
+        'title office create'=>' اضافه کردن مرکز',
         'title user create'=>' اضافه کردن کارمند',
         'title register user'=>'عضویت در سامانه',
         'title Login'=>'ورود به سامانه',
@@ -15,6 +17,7 @@ return [
         'title member'=>'عضو جدید',
         'register add user'=>'اضافه کردن کارمند جدید',
         'member add user'=>'اضافه کردن عضو جدید',
+        'member add office'=>'اضافه کردن مرکز خدمات جدید',
     ],
 
     'menu'=>[
@@ -76,7 +79,7 @@ return [
             'role'=>'نقش کاربر',
             'Email'=>'ایمیل',
             'agent'=>'نماینده فروش',
-            'moaref'=>'نماینده فروش',
+            'moaref'=>'نام معرف',
             'password'=>'رمز عبور',
             'confirm-password'=>'تکرار رمز عبور',
             'btn back'=>'قبلی',
@@ -102,13 +105,15 @@ return [
 
         'center'=>[
             'create center'=>'  افزدون اطلاعات مرکز خدمات',
-            'center info'=>'اطلاعات مرکز',
+            'center info'=>'اطلاعات مرکز خدمات',
             'please create personal center info'=>'لطفا اطلاعات مرکز خود را وارد کنید.',
             'c_title'=>'نام مرکز',
             'c_service'=>'خدمت',
             'c_type'=>'نوع خدمت',
+            'c_admin'=>'نام مدیر مرکز',
             'c_license'=>'شماره پروانه کسب',
             'c_history'=>'سابقه کاری',
+            'c_apprentice'=>' تعداد کارگران',
             'c_area'=>'متراژ مرکز',
             'c_owner'=>'مالکیت مرکز',
             'c_parking'=>'پارکینگ',
@@ -116,6 +121,7 @@ return [
             'c_phone'=>'شماره تلفن مرکز',
             'c_mobile'=>'شماره همراه مرکز',
             'c_evel'=>'نمره مرکز',
+            'c_accept'=>'تائید مراکز',
         ]
     ]
 

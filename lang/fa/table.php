@@ -5,6 +5,7 @@ return [
     'Dadatable'=>[
 
         'search filter'=>'فیلتر کردن نقش ',
+        'search filter jobs'=>'فیلتر کردن نوع خدمت ',
         'user list'=>'لیست کاربران',
         'add user'=>'کارمند جدید',
         'add member'=>'عضو جدید',
@@ -23,6 +24,23 @@ return [
             'agent'=>'نماینده فروش  ',
             'date'=>'تاریخ عضویت',
             'actions'=>'عملیات',
+        ],
+        'offices'=>[
+
+            'subject'=>'نوع خدمت',
+            'title'=>'نام مرکز',
+            'management'=>'نام مدیر',
+            'license_number'=>'شماره پروانه کسب',
+            'work_history'=>'سابقه کاری ',
+            'apprentice'=>'تعداد شاگرد',
+            'phone_office'=>'شماره مرکز',
+            'address_office'=>'شماره آدرس',
+            'is_owner'=>'مالک',
+            'is_parking'=>'پارکینگ',
+            'accept'=>'وضعیت مرکز',
+            'actions'=>'عملیات',
+
+
         ],
 
         'permissions'=>[

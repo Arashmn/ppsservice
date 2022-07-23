@@ -1,5 +1,5 @@
 @extends('panel.admins.layouts.master')
-@section('title', __('public.title.title users'))
+@section('title', __('public.title.title offices'))
 @section('vendor-css')
 
     <link rel="stylesheet" href="{{ asset('assets/panel/vendor/libs/datatables-bs5/datatables.bootstrap5.css') }}">
@@ -96,7 +96,7 @@
 
                     <div class="col-sm-2">
                         <div class="form-group">
-                            <label for="sending_filter" class="col-form-label">@lang('table.Dadatable.search filter')</label>
+                            <label for="sending_filter" class="col-form-label">@lang('table.Dadatable.search filter jobs')</label>
                             <div id="name-filter"></div>
                         </div>
                     </div>
@@ -115,32 +115,26 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>@lang('table.Dadatable.users.name')</th>
-                            <th>@lang('table.Dadatable.users.family')</th>
-                            <th>@lang('table.Dadatable.users.father')</th>
-                            <th>@lang('table.Dadatable.users.code_meli')</th>
-                            <th>@lang('table.Dadatable.users.mobile')</th>
-                            <th>@lang('table.Dadatable.users.email')</th>
-                            <th>@lang('table.Dadatable.users.sex')</th>
-                            <th>@lang('table.Dadatable.users.roles')</th>
-                            <th>@lang('table.Dadatable.users.actions')</th>
+                            <th>@lang('table.Dadatable.offices.subject')</th>
+                            <th>@lang('table.Dadatable.offices.title')</th>
+                            <th>@lang('table.Dadatable.offices.management')</th>
+                            <th>@lang('table.Dadatable.offices.license_number')</th>
+                            <th>@lang('table.Dadatable.offices.work_history')</th>
+                            <th>@lang('table.Dadatable.offices.accept')</th>
+                            <th>@lang('table.Dadatable.offices.actions')</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($users as $user)
+                        @foreach ($offices as $office)
                             <tr>
-                                <td>{{ $user->id }}</td>
-                                <td>{{ $user->name }}</td>
-                                <td>{{ $user->family }}</td>
-                                <td>{{ $user->father  }}</td>
-                                <td>{{ $user->code_meli }}</td>
-                                <td>{{ $user->mobile_number }}</td>
-                                <td>{{ $user->email }}</td>
-                                <td>{{ $user->sex }}</td>
-                                <td>@foreach ($user->roles as $role)
-                                    {{ $role->persian_name }}
-                                @endforeach
-                            </td>
+                                <td>{{ $office->id }}</td>
+                                <td>{{ $office->subject }}</td>
+                                <td>{{ $office->title }}</td>
+                                <td>{{ $office->management  }}</td>
+                                <td>{{ $office->license_number  }}</td>
+                                <td>{{ $office->work_history }}</td>
+                                <td>{{ $office->accept }}</td>
+
                                 <td>
                                     <div class="dropdown">
                                       <button type="button" class="btn p-0 dropdown-toggle hide-arrow show" data-bs-toggle="dropdown" aria-expanded="true">
@@ -213,7 +207,7 @@
         $(document).ready(function() {
             $('#getUser').DataTable({
                 initComplete: function() {
-                    this.api().columns(3).every(function() {
+                    this.api().columns(1).every(function() {
                         var column = this;
                         var select = $(
                                 '<select class="form-control"><option value="">همه</option></select>'

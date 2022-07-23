@@ -48,18 +48,20 @@
                     <div class="form-text">می‌توانید از حروف، اعداد و نقطه استفاده کنید</div>
                 </div>
                 <div class="col-md-6">
-                    <label class="form-label" for="multicol-country">@lang('public.wizard.base.sex')</label>
+                    <label class="form-label" for="multicol-country">@lang('public.wizard.base.sex') *</label>
                     <select id="multicol-country" name="sex" class="select2 form-select" data-allow-clear="true">
                         <option value="">انتخاب</option>
                         <option value="male">مرد</option>
                         <option value="female">زن</option>
                     </select>
+                    <span class="error">@error('sex') {{$message}} @enderror</span>
+
                 </div>
                 <div class="col-md-6">
-                    <label class="form-label" for="multicol-phone">@lang('public.wizard.base.mobile')</label>
-                    <input type="text" name="mobile" id="multicol-phone" class="form-control phone-mask text-start"
+                    <label class="form-label" for="multicol-phone">@lang('public.wizard.base.mobile') *</label>
+                    <input type="text" name="mobile_number " id="multicol-phone" class="form-control phone-mask text-start"
                         dir="ltr" placeholder="658 799 8941" aria-label="658 799 8941">
-                        <span class="error">@error('mobile') {{$message}} @enderror</span>
+                        <span class="error">@error('mobile_number') {{$message}} @enderror</span>
 
                 </div>
                 <div class="col-md-6">
@@ -68,7 +70,7 @@
                         placeholder="YYYY/MM/DD">
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-3">
                     <label class="form-label" for="multicol-country">@lang('public.wizard.base.agent')</label>
                     <select id="multicol-country" name="agent" class="select2 form-select" data-allow-clear="true">
                         @foreach ($agents as $agent)
@@ -77,6 +79,11 @@
                         @endforeach
 
                     </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label" for="multicol-country">@lang('public.wizard.base.moaref')</label>
+                    <input type="text" name="moaref" id="multicol-birthdate" class="form-control dob-picker"
+                    placeholder="معرف">
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="basic-default-message">@lang('public.wizard.base.address')</label>
@@ -138,7 +145,7 @@
             </div>
             <div class="pt-4">
                 <button type="submit" class="btn btn-primary me-sm-3 me-1">ثبت</button>
-                <a href="{{ route('users.index') }}"><button type="reset" class="btn btn-label-secondary">انصراف</button></a>
+                <a href="{{ route('customers.index') }}" class="btn btn-label-secondary" >انصراف</a>
             </div>
         </form>
     </div>
