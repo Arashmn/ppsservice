@@ -25,7 +25,7 @@
                 </div>
                 <div class="float-right">
                     <a href="{{ route('users.create') }}" class="btn btn-primary text-white"
-                        style="margin-right: 1159px;margin-top: -106px">@lang('table.Dadatable.add member')</a>
+                        style="margin-right: 983px;margin-top: -106px">@lang('table.Dadatable.add member')</a>
                 </div>
                 <div class="d-flex justify-content-between align-items-center row py-3 gap-3 gap-md-0">
                     <div class="col-md-4 user_role"></div>

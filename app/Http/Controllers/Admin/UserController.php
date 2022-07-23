@@ -23,8 +23,7 @@ class UserController extends Controller
     public function create()
     {
         $roles=Role::all();
-        $agents=Office::where('type','agent')->get();
-        return view('panel.admins.users.create',compact('agents','roles'));
+        return view('panel.admins.users.create',compact('roles'));
     }
 
 

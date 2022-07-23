@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\Office;
 use Config\Enum\UserSexEnum;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -21,8 +22,24 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'family',
+        'father',
         'email',
+        'sex',
+        'mobile_number',
         'password',
+        'code_meli',
+        'birthday',
+        'address',
+        'is_staff',
+        'agent',
+        'moaref',
+        'pic',
+        'file',
+        'accept',
+        'department_id',
+        'password',
+        'office_id'
     ];
 
     /**
@@ -44,18 +61,35 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function offices()
+    public function setPasswordAttribute($value)
     {
 
-        return $this->hasMany(Office::class);
-
+        $this->attributes['password'] = Hash::make($value);
     }
 
     public function car_inses()
     {
-          return $this->hasMany(car_ins::class);
+       return $this->hasOne(car_ins::class);
     }
 
-   
+
+    public function office()
+    {
+        return $this->belongsTo(Office::class);
+    }
+
+    // public function offices()
+    // {
+
+    //     return $this->hasMany(Office::class);
+
+    // }
+
+    // public function car_inses()
+    // {
+    //       return $this->hasMany(car_ins::class);
+    // }
+
+
 
 }

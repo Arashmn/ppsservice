@@ -15,25 +15,25 @@
             <div class="row g-3">
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-first-name">@lang('public.wizard.base.name') *</label>
-                    <input type="text" name="name" id="multicol-first-name" class="form-control" placeholder="جان">
+                    <input type="text" name="name" id="multicol-first-name" value="{{ old('name') }}" class="form-control" placeholder="جان">
                     <span class="error">@error('name') {{$message}} @enderror</span>
 
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-last-name">@lang('public.wizard.base.family') *</label>
-                    <input type="text" name="family" id="multicol-last-name" class="form-control" placeholder="اسنو">
+                    <input type="text" name="family" id="multicol-last-name" value="{{ old('family') }}" class="form-control" placeholder="اسنو">
                     <span class="error">@error('family') {{$message}} @enderror</span>
 
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-last-name">@lang('public.wizard.base.father') *</label>
-                    <input type="text" name="father" id="multicol-last-name" class="form-control" placeholder="اسنو">
+                    <input type="text" name="father" id="multicol-last-name"  value="{{ old('father') }}" class="form-control" placeholder="حسین">
                     <span class="error">@error('father') {{$message}} @enderror</span>
 
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-last-name"> @lang('public.wizard.base.code_meli') *</label>
-                    <input type="text" name="code_meli" id="multicol-last-name" class="form-control"
+                    <input type="text" name="code_meli" id="multicol-last-name"  value="{{ old('code_meli') }}" class="form-control"
                         placeholder="127234567">
                         <span class="error">@error('code_meli') {{$message}} @enderror</span>
 
@@ -42,33 +42,34 @@
                     <label class="form-label" for="multicol-email">@lang('public.wizard.base.Email')</label>
                     <div class="input-group input-group-merge">
                         <span class="input-group-text" id="multicol-email2" dir="ltr">@example.com</span>
-                        <input type="text" name="email" id="multicol-email" class="form-control text-start"
+                        <input type="text" name="email" id="multicol-email"   value="{{ old('email') }}" class="form-control text-start"
                             dir="ltr" placeholder="john.doe" aria-label="john.doe" aria-describedby="multicol-email2">
                     </div>
                     <div class="form-text">می‌توانید از حروف، اعداد و نقطه استفاده کنید</div>
                 </div>
                 <div class="col-md-6">
-                    <label class="form-label" for="multicol-country">@lang('public.wizard.base.sex')</label>
+                    <label class="form-label" for="multicol-country">@lang('public.wizard.base.sex') *</label>
                     <select id="multicol-country" name="sex" class="select2 form-select" data-allow-clear="true">
                         <option value="">انتخاب</option>
                         <option value="male">مرد</option>
                         <option value="female">زن</option>
                     </select>
+                    <span class="error">@error('sex') {{$message}} @enderror</span>
                 </div>
                 <div class="col-md-6">
-                    <label class="form-label" for="multicol-phone">@lang('public.wizard.base.mobile')</label>
-                    <input type="text" name="mobile" id="multicol-phone" class="form-control phone-mask text-start"
+                    <label class="form-label" for="multicol-phone">@lang('public.wizard.base.mobile') *</label>
+                    <input type="text" name="mobile_number" id="multicol-phone" value="{{ old('mobile_number') }}" class="form-control phone-mask text-start"
                         dir="ltr" placeholder="658 799 8941" aria-label="658 799 8941">
-                        <span class="error">@error('mobile') {{$message}} @enderror</span>
+                        <span class="error">@error('mobile_number') {{$message}} @enderror</span>
 
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-birthdate">@lang('public.wizard.base.birthday')</label>
-                    <input type="text" name="birthday" id="multicol-birthdate" class="form-control dob-picker"
+                    <input type="text" name="birthday" id="multicol-birthdate" value="{{ old('birthday') }}" class="form-control dob-picker"
                         placeholder="YYYY/MM/DD">
                 </div>
 
-                <div class="col-md-6">
+                {{-- <div class="col-md-6">
                     <label class="form-label" for="multicol-country">@lang('public.wizard.base.agent')</label>
                     <select id="multicol-country" name="agent" class="select2 form-select" data-allow-clear="true">
                         @foreach ($agents as $agent)
@@ -78,7 +79,7 @@
 
 
                     </select>
-                </div>
+                </div> --}}
                 <div class="col-md-6 select2-primary">
                     <label class="form-label" for="multicol-language">@lang('public.wizard.base.role')</label>
                     <select id="multicol-language" name="role[]" class="select2 form-select" multiple>
@@ -91,7 +92,7 @@
 
                 <div class="col-md-6">
                     <label class="form-label" for="basic-default-message">@lang('public.wizard.base.address')</label>
-                    <textarea id="basic-default-message" name="address" class="form-control" placeholder="متن پیام را اینجا بنویسید"></textarea>
+                    <textarea id="basic-default-message" name="address" class="form-control" placeholder="بلوار ...."></textarea>
                 </div>
 
 
@@ -101,50 +102,50 @@
             <div class="row g-3">
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-first-name">@lang('public.wizard.car_ins.car_name')</label>
-                    <input type="text" name="car_name" id="multicol-first-name" class="form-control" placeholder=" پژو 206">
+                    <input type="text" name="car_name" id="multicol-first-name" value="{{ old('car_name') }}" class="form-control" placeholder=" پژو 206">
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-last-name">@lang('public.wizard.car_ins.car_year')</label>
-                    <input type="text" name="car_year" id="multicol-last-name" class="form-control" placeholder="1387">
+                    <input type="text" name="car_year" id="multicol-last-name"  value="{{ old('car_year') }}" class="form-control" placeholder="1387">
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-last-name">@lang('public.wizard.car_ins.car_tage')</label>
-                    <input type="text" name="car_tage" id="multicol-last-name" class="form-control" placeholder="114ب14">
+                    <input type="text" name="car_tage" id="multicol-last-name"  value="{{ old('car_tage') }}"  class="form-control" placeholder="114ب14">
                 </div>
 
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-last-name">@lang('public.wizard.car_ins.car_number') *</label>
-                    <input type="text" name="car_number" id="multicol-last-name" class="form-control" placeholder="شماره ماشین">
+                    <input type="text" name="car_number" id="multicol-last-name"  value="{{ old('car_number') }}" class="form-control" placeholder="شماره ماشین">
                     <span class="error">@error('car_number') {{$message}} @enderror</span>
 
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-last-name">@lang('public.wizard.car_ins.car_chassis') *</label>
-                    <input type="text" name="car_chassis" id="multicol-last-name" class="form-control" placeholder="شماره شاسی">
+                    <input type="text" name="car_chassis" id="multicol-last-name" value="{{ old('car_chassis') }}" class="form-control" placeholder="شماره شاسی">
                     <span class="error">@error('car_chassis') {{$message}} @enderror</span>
                 </div>
                 {{-- ins --}}
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-last-name">@lang('public.wizard.car_ins.ins_type')</label>
-                    <input type="text"  name="ins_type" id="multicol-last-name" class="form-control">
+                    <input type="text"  name="ins_type" id="multicol-last-name" value="{{ old('ins_type') }}" class="form-control">
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-last-name">@lang('public.wizard.car_ins.ins_company')</label>
-                    <input type="text"  name="ins_company" id="multicol-last-name" class="form-control">
+                    <input type="text"  name="ins_company" id="multicol-last-name" value="{{ old('ins_company') }}" class="form-control">
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-last-name">@lang('public.wizard.car_ins.ins_serialNumber') *</label>
-                    <input type="text" name="ins_serialNumber" id="multicol-last-name" class="form-control">
+                    <input type="text" name="ins_serialNumber" id="multicol-last-name" value="{{ old('ins_serialNumber') }}"class="form-control">
                     <span class="error">@error('ins_serialNumber') {{$message}} @enderror</span>
 
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-last-name">@lang('public.wizard.car_ins.ins_premium')</label>
-                    <input type="text" name="ins_premium" id="multicol-last-name" class="form-control">
+                    <input type="text" name="ins_premium" id="multicol-last-name"  value="{{ old('ins_premium') }}" class="form-control">
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-last-name">@lang('public.wizard.car_ins.ins_expire')</label>
-                    <input type="text" name="ins_expire" id="multicol-last-name" class="form-control">
+                    <input type="text" name="ins_expire" id="multicol-last-name" class="form-control" placeholder="YYYY/MM/DD">
                 </div>
             </div>
             <div class="pt-4">

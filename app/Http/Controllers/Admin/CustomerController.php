@@ -14,6 +14,10 @@ class CustomerController extends Controller
     public function index()
     {
 
+        // $test=User::find(50002);
+
+        // dd($test->office->company);
+
         $customers=User::where('is_staff',0)->get();
 
         return view('panel.admins.customers.all',compact('customers'));
