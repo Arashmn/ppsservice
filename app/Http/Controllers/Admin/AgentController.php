@@ -8,6 +8,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\AgentRequest;
+use App\Models\companyIns;
 
 class AgentController extends Controller
 {
@@ -18,7 +19,8 @@ class AgentController extends Controller
     }
     public function create()
     {
-        return view('panel.admins.agents.create');
+        $companies=companyIns::all();
+        return view('panel.admins.agents.create',compact('companies'));
 
     }
 

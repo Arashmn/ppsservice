@@ -77,7 +77,6 @@
                         <option value="{{ $agent->id }}">{{ $agent->management }}</option>
                         @endforeach
 
-
                     </select>
                 </div> --}}
                 <div class="col-md-6 select2-primary">

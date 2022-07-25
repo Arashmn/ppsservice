@@ -111,40 +111,16 @@
             <h6 class="fw-normal">2. @lang('public.wizard.agent.create agent')</h6>
             <div class="row g-3">
                 <div class="col-md-3">
-                    <label class="form-label" for="multicol-country">@lang('public.wizard.agent.a_title') *</label>
-                    <select name="subject" id="multicol-country"  class="select2 form-select"
-                        data-allow-clear="true">
-                        <option value="0" selected="" disabled="">شرکت را انتخاب کنید</option>
-                        <option value="1">پاسارگاد</option>
-                        <option value="2">ایران</option>
-                        <option value="3">آسیا</option>
-                        <option value="4">البرز</option>
-                        <option value="5">دانا</option>
-                        <option value="6">کوثر</option>
-                        <option value="7">معلم</option>
-                        <option value="8">پارسیان</option>
-                        <option value="9">دی</option>
-                        <option value="10">ملت</option>
-                        <option value="11">کارآفرین</option>
-                        <option value="12">سامان</option>
-                        <option value="13">ما</option>
-                        <option value="14">سینا</option>
-                        <option value="15">رازی</option>
-                        <option value="16">نوین</option>
-                        <option value="17">سرمد</option>
-                        <option value="18">آرمان</option>
-                        <option value="19">تعاون</option>
-                        <option value="20">میهن</option>
-                        <option value="21">تجارت نو</option>
-                        <option value="22">کارگزاری</option>
-                    </select>
-                    <span class="error">
-                        @error('subject')
-                            {{ $message }}
-                        @enderror
-                    </span>
+                    <label class="form-label" for="multicol-country">@lang('public.wizard.agent.a_title')</label>
+                    <select id="multicol-language" name="subject" class="select2 form-select">
+                        @foreach ($companies as $company)
+                        <option value="">انتخاب</option>
+                        <option value="{{ $company->id }}">{{ $company->name  }}</option>
+                        @endforeach
 
+                    </select>
                 </div>
+
                 <div class="col-md-3">
                     <label class="form-label" for="multicol-last-name">@lang('public.wizard.agent.a_subject')</label>
                     <input type="text" name="title" value="{{ old('title') }}" id="multicol-last-name"
@@ -157,7 +133,7 @@
 
                 </div>
                 <div class="col-md-3">
-                    <label class="form-label" for="multicol-last-name">@lang('public.wizard.agent.a_admin')  *</label>
+                    <label class="form-label" for="multicol-last-name">@lang('public.wizard.agent.a_admin') *</label>
                     <input type="text" name="management" value="{{ old('management') }}" id="multicol-last-name"
                         class="form-control" placeholder="رضا">
                     <span class="error">
