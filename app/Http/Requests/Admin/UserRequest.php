@@ -23,16 +23,7 @@ class UserRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'name'=>'required',
-            'family'=>'required',
-            'father'=>'required',
-            'code_meli'=>'required|unique:users|regex:/^([0-9]){10}$/',
-            'email'=>'nullable',
-            'sex'=>'required',
-            'mobile_number'=>'required|unique:users|numeric|digits:11|regex:/(09)[0-9]{9}/',
-            'birthday'=>'nullable',
-            'address'=>'nullable',
+        return array_merge(parentRequest::rules(),[
             'car_name'=>'nullable',
             'car_year'=>'nullable',
             'car_tage'=>'nullable',
@@ -43,6 +34,6 @@ class UserRequest extends FormRequest
             'ins_serialNumber'=>'required|unique:car_ins|',
             'ins_premium'=>'nullable',
             'ins_expire'=>'nullable',
-        ];
+        ]);
     }
 }
