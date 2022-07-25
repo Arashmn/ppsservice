@@ -1,5 +1,5 @@
 @extends('panel.admins.layouts.master')
-@section('title', __('public.title.title members'))
+@section('title', __('public.title.title agents'))
 @section('vendor-css')
 
     <link rel="stylesheet" href="{{ asset('assets/panel/vendor/libs/datatables-bs5/datatables.bootstrap5.css') }}">
@@ -23,9 +23,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="float-right">
-                    <a href="{{ route('users.create') }}" class="btn btn-primary text-white">@lang('table.Dadatable.add member')</a>
-                </div>
+
                 <div class="d-flex justify-content-between align-items-center row py-3 gap-3 gap-md-0">
                     <div class="col-md-4 user_role"></div>
                     <div class="col-md-4 user_plan"></div>
@@ -37,27 +35,24 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>@lang('table.Dadatable.users.name')</th>
-                            <th>@lang('table.Dadatable.users.family')</th>
-                            <th>@lang('table.Dadatable.users.father')</th>
-                            <th>@lang('table.Dadatable.users.code_meli')</th>
-                            <th>@lang('table.Dadatable.users.mobile')</th>
-                            <th>@lang('table.Dadatable.users.sex')</th>
-                            <th>@lang('table.Dadatable.users.date')</th>
-                            <th>@lang('table.Dadatable.users.actions')</th>
+                            <th>@lang('table.Dadatable.agents.subject')</th>
+                            <th>@lang('table.Dadatable.agents.management')</th>
+                            <th>@lang('table.Dadatable.agents.license_number')</th>
+                            <th>@lang('table.Dadatable.agents.work_history')</th>
+                            <th>@lang('table.Dadatable.agents.accept')</th>
+                            <th>@lang('table.Dadatable.agents.actions')</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($customers as $customer)
+                        @foreach ($agents as $agent)
                             <tr>
                                 <td>{{ $customer->id }}</td>
-                                <td>{{ $customer->name }}</td>
-                                <td>{{ $customer->family }}</td>
-                                <td>{{ $customer->father  }}</td>
-                                <td>{{ $customer->code_meli }}</td>
-                                <td>{{ $customer->mobile_number }}</td>
-                                <td>{{ $customer->sex }}</td>
-                                <td>{{ $customer->created_at }}</td>
+                                <td>{{ $customer->subject }}</td>
+                                <td>{{ $customer->managemen  }}</td>
+                                <td>{{ $customer->agent_code    }}</td>
+                                <td>{{ $customer->work_history }}</td>
+                                <td>{{ $customer->accept }}</td>
+                                <td>{{ $customer->actions }}</td>
                                 <td>ss</td>
                             </tr>
                         @endforeach

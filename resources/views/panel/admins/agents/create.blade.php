@@ -1,5 +1,5 @@
 @extends('panel.admins.layouts.master')
-@section('title', __('public.title.title office create'))
+@section('title', __('public.title.title agent create'))
 @section('vendor-css')
 
     <link rel="stylesheet" href="{{ asset('assets/panel/vendor/libs/flatpickr/flatpickr.css') }}">
@@ -8,8 +8,8 @@
 @section('content')
     <!-- Multi Column with Form Separator -->
     <div class="card mb-4">
-        <h5 class="card-header" style="text-align: center">@lang('public.title.member add office')</h5>
-        <form class="card-body" action="{{ route('offices.store') }}" method="POST" enctype="multipart/form-data">
+        <h5 class="card-header" style="text-align: center">@lang('public.title.member add agent')</h5>
+        <form class="card-body" action="{{ route('agents.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <h6 class="fw-normal">1. @lang('public.wizard.base.personal info')</h6>
             <div class="row g-3">
@@ -108,12 +108,47 @@
 
             </div>
             <hr class="my-4 mx-n4">
-            <h6 class="fw-normal">2. @lang('public.wizard.center.center info')</h6>
+            <h6 class="fw-normal">2. @lang('public.wizard.agent.create agent')</h6>
             <div class="row g-3">
-                <div class="col-md-6">
-                    <label class="form-label" for="multicol-first-name">@lang('public.wizard.center.c_title') * </label>
-                    <input type="text" name="title" value="{{ old('title') }}" id="multicol-first-name"
-                        class="form-control" placeholder="باطری ساز">
+                <div class="col-md-3">
+                    <label class="form-label" for="multicol-country">@lang('public.wizard.agent.a_title') *</label>
+                    <select name="subject" id="multicol-country"  class="select2 form-select"
+                        data-allow-clear="true">
+                        <option value="0" selected="" disabled="">شرکت را انتخاب کنید</option>
+                        <option value="1">پاسارگاد</option>
+                        <option value="2">ایران</option>
+                        <option value="3">آسیا</option>
+                        <option value="4">البرز</option>
+                        <option value="5">دانا</option>
+                        <option value="6">کوثر</option>
+                        <option value="7">معلم</option>
+                        <option value="8">پارسیان</option>
+                        <option value="9">دی</option>
+                        <option value="10">ملت</option>
+                        <option value="11">کارآفرین</option>
+                        <option value="12">سامان</option>
+                        <option value="13">ما</option>
+                        <option value="14">سینا</option>
+                        <option value="15">رازی</option>
+                        <option value="16">نوین</option>
+                        <option value="17">سرمد</option>
+                        <option value="18">آرمان</option>
+                        <option value="19">تعاون</option>
+                        <option value="20">میهن</option>
+                        <option value="21">تجارت نو</option>
+                        <option value="22">کارگزاری</option>
+                    </select>
+                    <span class="error">
+                        @error('subject')
+                            {{ $message }}
+                        @enderror
+                    </span>
+
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label" for="multicol-last-name">@lang('public.wizard.agent.a_subject')</label>
+                    <input type="text" name="title" value="{{ old('title') }}" id="multicol-last-name"
+                        class="form-control" placeholder="رضا">
                     <span class="error">
                         @error('title')
                             {{ $message }}
@@ -121,8 +156,8 @@
                     </span>
 
                 </div>
-                <div class="col-md-6">
-                    <label class="form-label" for="multicol-last-name">@lang('public.wizard.center.c_admin')</label>
+                <div class="col-md-3">
+                    <label class="form-label" for="multicol-last-name">@lang('public.wizard.agent.a_admin')  *</label>
                     <input type="text" name="management" value="{{ old('management') }}" id="multicol-last-name"
                         class="form-control" placeholder="رضا">
                     <span class="error">
@@ -132,72 +167,29 @@
                     </span>
 
                 </div>
-                <div class="col-md-6">
-                    <label class="form-label" for="multicol-last-name">@lang('public.wizard.center.c_license') *</label>
-                    <input type="text" name="license_number" value="{{ old('license_number') }}"
-                        id="multicol-last-name" class="form-control" placeholder="122***">
+                <div class="col-md-3">
+                    <label class="form-label" for="multicol-last-name">@lang('public.wizard.agent.agent_code') *</label>
+                    <input type="text" name="agent_code" value="{{ old('agent_code') }}" id="multicol-last-name"
+                        class="form-control" placeholder="122***">
                     <span class="error">
-                        @error('license_number')
+                        @error('agent_code')
                             {{ $message }}
                         @enderror
                     </span>
 
                 </div>
-                <div class="col-md-6">
-                    <label class="form-label" for="multicol-last-name">@lang('public.wizard.center.c_history')</label>
+                <div class="col-md-3">
+                    <label class="form-label" for="multicol-last-name">@lang('public.wizard.agent.a_history')</label>
                     <input type="text" name="work_history" value="{{ old('work_history') }}" id="multicol-last-name"
                         class="form-control" placeholder="15 سال">
                 </div>
-                <div class="col-md-6">
-                    <label class="form-label" for="multicol-last-name">@lang('public.wizard.center.c_area')</label>
-                    <input type="text" name="area" value="{{ old('area') }}" id="multicol-last-name"
-                        class="form-control" placeholder="150 متر">
-                </div>
-                <div class="col-md-6">
-                    <label class="form-label" for="multicol-last-name">@lang('public.wizard.center.c_apprentice')</label>
-                    <input type="text" name="apprentice" value="{{ old('apprentice') }}" id="multicol-last-name"
-                        class="form-control" placeholder="10 نقر">
-                </div>
-
-                <div class="col-md-6">
-                    <label class="form-label" for="multicol-last-name">@lang('public.wizard.center.c_phone')</label>
-                    <input type="text" name="phone_office" value="{{ old('phone_office') }}" id="multicol-last-name"
-                        class="form-control" placeholder="0313*****">
-                </div>
-                <div class="col-md-6">
-                    <label class="form-label" for="basic-default-message">@lang('public.wizard.center.c_address')</label>
-                    <textarea id="basic-default-message" name="address_office" value="{{ old('address_office') }}" class="form-control"
-                        placeholder="متن پیام را اینجا بنویسید"></textarea>
-                </div>
-                <div class="col-md-2">
-                    <label class="form-label" for="multicol-country">@lang('public.wizard.center.c_type') *</label>
-                    <select id="multicol-country" name="type" class="select2 form-select" data-allow-clear="true">
-                        @foreach ($types as $type)
-                            <option value="{{ $type->name }}">{{ $type->name }}</option>
-                        @endforeach
-                    </select>
-                    <span class="error">
-                        @error('type')
-                            {{ $message }}
-                        @enderror
-                    </span>
+                <div class="col-md-3">
+                    <label class="form-label" for="multicol-last-name">@lang('public.wizard.agent.a_count')</label>
+                    <input type="text" name="apprentice" value="{{ old('area') }}" id="multicol-last-name"
+                        class="form-control" placeholder=" سال 15 ">
                 </div>
                 <div class="col-md-3">
-                    <label class="form-label" for="multicol-country">@lang('public.wizard.center.c_parking') *</label>
-                    <select id="multicol-country" name="is_parking" class="select2 form-select" data-allow-clear="true">
-                        <option value="">انتخاب</option>
-                        <option value="0">پارکینگ دارم</option>
-                        <option value="1">پارکینگ ندارم</option>
-                    </select>
-                    <span class="error">
-                        @error('is_parking')
-                            {{ $message }}
-                        @enderror
-                    </span>
-
-                </div>
-                <div class="col-md-2">
-                    <label class="form-label" for="multicol-country">@lang('public.wizard.center.c_owner') *</label>
+                    <label class="form-label" for="multicol-country">@lang('public.wizard.agent.a_owner') *</label>
                     <select id="multicol-country" name="is_owner" class="select2 form-select" data-allow-clear="true">
                         <option value="">انتخاب</option>
                         <option value="0">مالک هستم</option>
@@ -209,18 +201,15 @@
                         @enderror
                     </span>
                 </div>
-                <div class="col-md-2">
-                    <label class="form-label" for="multicol-country">@lang('public.wizard.center.c_accept')</label>
-                    <select id="multicol-country" name="accept" class="select2 form-select" data-allow-clear="true">
-                        <option value="">انتخاب</option>
-                        <option value="0">مورد تائید نیست</option>
-                        <option value="1">مورد تائید هست</option>
-                    </select>
-                    <span class="error">
-                        @error('accept')
-                            {{ $message }}
-                        @enderror
-                    </span>
+                <div class="col-md-3">
+                    <label class="form-label" for="multicol-last-name">@lang('public.wizard.agent.a_phone')</label>
+                    <input type="text" name="phone_office" value="{{ old('phone_office') }}" id="multicol-last-name"
+                        class="form-control" placeholder="0313*****">
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label" for="basic-default-message">@lang('public.wizard.agent.a_address')</label>
+                    <textarea id="basic-default-message" name="address_office" value="{{ old('address_office') }}" class="form-control"
+                        placeholder="متن پیام را اینجا بنویسید"></textarea>
                 </div>
                 <div class="col-md-3">
                     <label for="formFile" class="form-label">پروانه کسب</label>

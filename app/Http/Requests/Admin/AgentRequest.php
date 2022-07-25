@@ -13,7 +13,7 @@ class AgentRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,23 @@ class AgentRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name'=>'required',
+            'family'=>'required',
+            'father'=>'required',
+            'code_meli'=>'required|unique:users|regex:/^([0-9]){10}$/',
+            'email'=>'nullable',
+            'sex'=>'required',
+            'mobile_number'=>'required|unique:users|numeric|digits:11|regex:/(09)[0-9]{9}/',
+            'birthday'=>'nullable',
+            'address'=>'nullable',
+            'subject'=>'required',
+            'management'=>'required',
+            'agent_code'=>'required|unique:offices',
+            'work_history'=>'nullable',
+            'apprentice'=>'nullable',
+            'phone_office'=>'nullable',
+            'address_office'=>'nullable',
+            'is_owner'=>'required',
         ];
     }
 }

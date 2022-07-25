@@ -195,7 +195,9 @@ return [
         "license_number"=>'شماره پروانه کسب  ',
         "type"=>'نوع خدمت',
         "is_parking"=>'پارکینگ',
-        "is_owner"=>'مالکیت مرکز',
+        "is_owner"=>'مالکیت ',
         "management"=>'نام مدیر',
+        "agent_code"=>'کد نمایندگی',
+        "subject"=>'نام شرکت اصلی ',
     ],
 ];

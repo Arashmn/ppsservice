@@ -25,7 +25,6 @@ class OfficeController extends Controller
 
     public function store(officeRequest $request)
     {
-           dd($request->all());
 
            $token =  Str::random(8);
            $dataUSer=[
@@ -37,6 +36,7 @@ class OfficeController extends Controller
                'sex'=>$request->sex,
                'mobile_number'=>$request->mobile_number,
                'birthday'=>$request->birthday,
+               'is_staff'=>0,
                'password'=>$token
            ];
 
@@ -52,12 +52,17 @@ class OfficeController extends Controller
                'apprentice'=>$request->apprentice,
                'address_office'=>$request->address_office,
                'phone_office'=>$request->phone_office,
-               'type'=>$request->type,
+               'subject'=>$request->type,
                'is_owner'=>$request->is_owner,
                'is_parking'=>$request->ins_serialNumber,
                'accept'=>$request->accept,
            ];
 
           Office::create($dataIns);
+    }
+
+    public function show()
+    {
+
     }
 }

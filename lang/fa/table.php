@@ -39,8 +39,16 @@ return [
             'is_parking'=>'پارکینگ',
             'accept'=>'وضعیت مرکز',
             'actions'=>'عملیات',
+        ],
+        'agents'=>[
+            'subject'=>'شرکت بیمه',
+            'title'=>'نام شرکت فرعی بیمه ای',
+            'management'=>'مدیریت نمایندگی',
+            'license_number'=>'کد  نمایندگی',
+            'work_history'=>'سابقه کاری ',
 
-
+            'accept'=>'وضعیت نماینده',
+            'actions'=>'عملیات'
         ],
 
         'permissions'=>[

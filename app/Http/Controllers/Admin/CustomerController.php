@@ -41,7 +41,7 @@ class CustomerController extends Controller
             'sex'=>$request->sex,
             'mobile_number'=>$request->mobile_number,
             'birthday'=>$request->birthday,
-            'is_staff'=>1,
+            'is_staff'=>0,
             'password'=>$token
         ];
 

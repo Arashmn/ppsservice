@@ -9,8 +9,10 @@ return [
         'title users'=>'صفحه کارمند',
         'title offices'=>'صفحه مراکز',
         'title members'=>'صفحه اعضاء',
+        'title agents'=>'صفحه نمایندگان',
         'title office create'=>' اضافه کردن مرکز',
         'title user create'=>' اضافه کردن کارمند',
+        'title agent create'=>' اضافه کردن نماینده',
         'title register user'=>'عضویت در سامانه',
         'title Login'=>'ورود به سامانه',
         'title add'=>'کارمند جدید',
@@ -18,6 +20,7 @@ return [
         'register add user'=>'اضافه کردن کارمند جدید',
         'member add user'=>'اضافه کردن عضو جدید',
         'member add office'=>'اضافه کردن مرکز خدمات جدید',
+        'member add agent'=>'اضافه کردن نماینده جدید',
     ],
 
     'menu'=>[
@@ -121,6 +124,21 @@ return [
             'c_phone'=>'شماره تلفن مرکز',
             'c_mobile'=>'شماره همراه مرکز',
             'c_evel'=>'نمره مرکز',
+            'c_accept'=>'تائید مراکز',
+        ],
+        'agent'=>[
+
+            'create agent'=>'  افزدون اطلاعات  دفتر نماینده',
+            'a_title'=>'نام شرکت اصلی',
+            'a_subject'=>'نام شرکت زیر مجموعه',
+            'a_admin'=>'نام مدیر نمایندگی',
+            'agent_code'=>'کد  نمایندگی',
+            'a_history'=>'سابقه کاری',
+            'a_count'=>'تعداد فروش سالانه بیمه ثالث',
+            'a_owner'=>'مالکیت دفتر',
+            'a_address'=>'آدرس دفتر',
+            'a_phone'=>'شماره تلفن دفتر',
+
             'c_accept'=>'تائید مراکز',
         ]
     ]
