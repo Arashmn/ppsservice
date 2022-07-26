@@ -6,6 +6,7 @@ return [
 
         'search filter'=>'فیلتر کردن نقش ',
         'search filter jobs'=>'فیلتر کردن نوع خدمت ',
+        'search filter sex'=>'فیلتر کردن  جنسیت ',
         'user list'=>'لیست کاربران',
         'add user'=>'کارمند جدید',
         'add member'=>'عضو جدید',
@@ -24,6 +25,12 @@ return [
             'agent'=>'نماینده فروش  ',
             'date'=>'تاریخ عضویت',
             'actions'=>'عملیات',
+            'management'=>'مدیریت نمایندگی',
+            'members'=>'تعداد عضو ',
+            'work_history'=>'سابقه کاری ',
+            'How to cooperate'=>'نحوه همکاری',
+            'How to contract'=>'نحوه قرار داد',
+
         ],
         'offices'=>[
 

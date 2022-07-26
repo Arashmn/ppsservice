@@ -9,10 +9,12 @@ return [
         'title users'=>'صفحه کارمند',
         'title offices'=>'صفحه مراکز',
         'title members'=>'صفحه اعضاء',
+        'title marketers'=>'صفحه بازاریاب',
         'title agents'=>'صفحه نمایندگان',
         'title office create'=>' اضافه کردن مرکز',
         'title user create'=>' اضافه کردن کارمند',
         'title agent create'=>' اضافه کردن نماینده',
+        'title agent marketers'=>' اضافه کردن بازاریاب',
         'title register user'=>'عضویت در سامانه',
         'title Login'=>'ورود به سامانه',
         'title add'=>'کارمند جدید',
@@ -21,6 +23,7 @@ return [
         'member add user'=>'اضافه کردن عضو جدید',
         'member add office'=>'اضافه کردن مرکز خدمات جدید',
         'member add agent'=>'اضافه کردن نماینده جدید',
+        'member add marketers'=>'اضافه کردن بازاریاب جدید',
     ],
 
     'menu'=>[
@@ -138,6 +141,17 @@ return [
             'a_owner'=>'مالکیت دفتر',
             'a_address'=>'آدرس دفتر',
             'a_phone'=>'شماره تلفن دفتر',
+
+            'c_accept'=>'تائید مراکز',
+        ],
+        'marketer'=>[
+
+            'create marketer'=>'  افزدون اطلاعات  بازاریاب',
+            'a_title'=>'نام شرکت اصلی',
+            'm_subject'=>'شرکت زیر مجموعه',
+            'How to cooperate'=>'نحوه همکاری',
+            'How to contract'=>'نحوه قرار داد',
+            'a_history'=>'سابقه کاری',
 
             'c_accept'=>'تائید مراکز',
         ]

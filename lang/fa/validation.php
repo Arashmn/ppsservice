@@ -199,5 +199,6 @@ return [
         "management"=>'نام مدیر',
         "agent_code"=>'کد نمایندگی',
         "subject"=>'نام شرکت اصلی ',
+        "cooperate"=>'نحوه همکاری',
     ],
 ];
