@@ -68,27 +68,22 @@ class User extends Authenticatable
         $this->attributes['password'] = Hash::make($value);
     }
 
-    public function car_inses()
+    public function offices()
     {
-       return $this->hasOne(car_ins::class);
+
+        return $this->hasMany(Office::class);
+
     }
-
-
-    public function office()
-    {
-        return $this->belongsTo(Office::class);
-    }
-
-    // public function offices()
-    // {
-
-    //     return $this->hasMany(Office::class);
-
-    // }
 
     // public function car_inses()
     // {
-    //       return $this->hasMany(car_ins::class);
+    //    return $this->hasOne(car_ins::class);
+    // }
+
+
+    // public function office()
+    // {
+    //     return $this->belongsTo(Office::class);
     // }
 
 

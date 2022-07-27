@@ -171,7 +171,7 @@
                 </div>
                 <div class="col-md-2">
                     <label class="form-label" for="multicol-country">@lang('public.wizard.center.c_type') *</label>
-                    <select id="multicol-country" name="type" class="select2 form-select" data-allow-clear="true">
+                    <select id="multicol-country" name="subject" class="select2 form-select" data-allow-clear="true">
                         @foreach ($types as $type)
                             <option value="{{ $type->name }}">{{ $type->name }}</option>
                         @endforeach
@@ -186,8 +186,8 @@
                     <label class="form-label" for="multicol-country">@lang('public.wizard.center.c_parking') *</label>
                     <select id="multicol-country" name="is_parking" class="select2 form-select" data-allow-clear="true">
                         <option value="">انتخاب</option>
-                        <option value="0">پارکینگ دارم</option>
-                        <option value="1">پارکینگ ندارم</option>
+                        <option value="Parking">پارکینگ دارم</option>
+                        <option value="noParking">پارکینگ ندارم</option>
                     </select>
                     <span class="error">
                         @error('is_parking')
@@ -200,8 +200,8 @@
                     <label class="form-label" for="multicol-country">@lang('public.wizard.center.c_owner') *</label>
                     <select id="multicol-country" name="is_owner" class="select2 form-select" data-allow-clear="true">
                         <option value="">انتخاب</option>
-                        <option value="0">مالک هستم</option>
-                        <option value="1">مستاجر هستم</option>
+                        <option value="owner">مالک هستم</option>
+                        <option value="noOwner">مستاجر هستم</option>
                     </select>
                     <span class="error">
                         @error('is_owner')
