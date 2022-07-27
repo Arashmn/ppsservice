@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Hekmatinasser\Verta\Verta;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Office extends Model
 {
@@ -30,4 +31,10 @@ class Office extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function getCreatedAtAttribute($value)
+    {
+        return (new Verta($value))->formatDate('Y-n-j');
+    }
+
 }

@@ -200,5 +200,8 @@ return [
         "agent_code"=>'کد نمایندگی',
         "subject"=>'نام شرکت اصلی ',
         "cooperate"=>'نحوه همکاری',
+        "apprentice"=>'تعداد شاگرد',
+        "work_history"=>'سابقه کاری',
+        "area"=>'متراژ',
     ],
 ];

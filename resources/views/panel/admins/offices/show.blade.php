@@ -1,5 +1,5 @@
 @extends('panel.admins.layouts.master')
-@section('title', __('public.title.title  office show'))
+@section('title', __('public.title.title office show'))
 @section('vendor-css')
 
 
@@ -31,15 +31,15 @@
                             <div
                                 class="d-flex align-items-md-end align-items-sm-start align-items-center justify-content-md-between justify-content-start mx-4 flex-md-row flex-column gap-4">
                                 <div class="user-profile-info">
-                                    <h4>{{ $office->user->name .' '.$office->user->family }}</h4>
+                                    <h4>{{ $office->user->name . ' ' . $office->user->family }}</h4>
                                     {{-- <ul
                                         class="list-inline mb-0 d-flex align-items-center flex-wrap justify-content-sm-start justify-content-center gap-2">
                                         <li class="list-inline-item fw-semibold"><i class="bx bx-pen"></i>  شماره عضویت :{{$office->id }}</li>
                                     </ul> --}}
                                 </div>
-                                {{-- <a href="javascript:void(0)" class="btn btn-primary text-nowrap">
+                                <a href="javascript:void(0)" class="btn btn-primary text-nowrap">
                                     <i class="bx bx-user-check"></i> متصل
-                                </a> --}}
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -79,26 +79,28 @@
                         <ul class="list-unstyled mb-4 mt-3">
                             <li class="d-flex align-items-center mb-3">
                                 <i class="bx bx-user"></i><span class="fw-semibold mx-2">نام کامل:</span>
-                                <span>{{ $office->user->name .' '.$office->user->family }}</span>
+                                <span>{{ $office->user->name . ' ' . $office->user->family }}</span>
                             </li>
                             <li class="d-flex align-items-center mb-3">
                                 <i class="bx bx-user"></i><span class="fw-semibold mx-2">نام پدر:</span>
-                                <span>{{ $office->user->father}}</span>
+                                <span>{{ $office->user->father }}</span>
                             </li>
 
                             <li class="d-flex align-items-center mb-3">
-                                <i class="bx bx-check"></i><span class="fw-semibold mx-2"> کد ملی:</span> <span>{{$office->user->code_meli }}</span>
+                                <i class="bx bx-check"></i><span class="fw-semibold mx-2"> کد ملی:</span>
+                                <span>{{ $office->user->code_meli }}</span>
                             </li>
                         </ul>
                         <small class="text-muted text-uppercase">تماس</small>
                         <ul class="list-unstyled mb-4 mt-3">
                             <li class="d-flex align-items-center mb-3">
-                                <i class="bx bx-check"></i><span class="fw-semibold mx-2">شماره موبایل:</span> <span>{{$office->user->mobile_number}}</span>
+                                <i class="bx bx-check"></i><span class="fw-semibold mx-2">شماره موبایل:</span>
+                                <span>{{ $office->user->mobile_number }}</span>
                             </li>
 
                             <li class="d-flex align-items-center mb-3">
                                 <i class="bx bx-envelope"></i><span class="fw-semibold mx-2">ایمیل:</span>
-                                <span>{{$office->user->email ?? 'ندارد'}}</span>
+                                <span>{{ $office->user->email ?? 'ندارد' }}</span>
                             </li>
                         </ul>
                     </div>
@@ -109,39 +111,41 @@
                     <div class="card-body">
                         <small class="text-muted text-uppercase">درباره مرکز خدمات </small>
                         <ul class="list-unstyled mb-4 mt-3">
-                            <li class="d-flex align-items-center mb-3">
+                            {{-- <li class="d-flex align-items-center mb-3">
                                 <i class="bx bx-user"></i><span class="fw-semibold mx-2">نوع مرکز :</span>
-                                <span>{{ $office->subject  }}</span>
-                            </li>
+                                <span>{{ $office->subject }}</span>
+                            </li> --}}
                             <li class="d-flex align-items-center mb-3">
                                 <i class="bx bx-user"></i><span class="fw-semibold mx-2">نام مرکز :</span>
-                                <span>{{ $office->title  }}</span>
+                                <span>{{ $office->title }}</span>
                             </li>
                             <li class="d-flex align-items-center mb-3">
                                 <i class="bx bx-user"></i><span class="fw-semibold mx-2">نام مدیر مرکز :</span>
-                                <span>{{ $office->management  }}</span>
+                                <span>{{ $office->user->name . ' ' . $office->user->family }}</span>    
                             </li>
                             <li class="d-flex align-items-center mb-3">
-                                <i class="bx bx-check"></i><span class="fw-semibold mx-2">  شماره پروانه کسب:</span> <span>{{$office->license_number  }}</span>
+                                <i class="bx bx-check"></i><span class="fw-semibold mx-2"> شماره پروانه کسب:</span>
+                                <span>{{ $office->license_number }}</span>
                             </li>
                             <li class="d-flex align-items-center mb-3">
-                                <i class="bx bx-check"></i><span class="fw-semibold mx-2">  سابقه  کار  مرکز:</span> <span>{{ $office->work_history.' '.'سال'  }}</span>
+                                <i class="bx bx-check"></i><span class="fw-semibold mx-2"> سابقه کار مرکز:</span>
+                                <span>{{ $office->work_history . ' ' . 'سال' }}</span>
                             </li>
                             <li class="d-flex align-items-center mb-3">
-                                <i class="bx bx-check"></i><span class="fw-semibold mx-2">  متراژ  مرکز:</span> <span>{{ $office->area.' '.'متر'  }}</span>
+                                <i class="bx bx-check"></i><span class="fw-semibold mx-2"> متراژ مرکز:</span>
+                                <span>{{ $office->area . ' ' . 'متر' }}</span>
                             </li>
                             <li class="d-flex align-items-center mb-3">
-                                <i class="bx bx-check"></i><span class="fw-semibold mx-2"> تعداد شاگرد مرکز :</span> <span>{{$office->apprentice.' '.'نفر'   }}</span>
+                                <i class="bx bx-check"></i><span class="fw-semibold mx-2"> تعداد شاگرد مرکز :</span>
+                                <span>{{ $office->apprentice . ' ' . 'نفر' }}</span>
                             </li>
                             <li class="d-flex align-items-center mb-3">
 
                                 <i class="bx bx-check"></i><span class="fw-semibold mx-2"> مالکیت مرکز:</span> <span>
                                     @if ($office->is_owner == 'owner')
-
-                                    {{ 'مالک هستم ' }}
-
+                                        {{ 'مالک هستم ' }}
                                     @else
-                                    {{ 'مستاجر  هستم ' }}
+                                        {{ 'مستاجر  هستم ' }}
                                     @endif
 
                                 </span>
@@ -151,11 +155,21 @@
 
                                 <i class="bx bx-check"></i><span class="fw-semibold mx-2"> پارکینگ مرکز:</span> <span>
                                     @if ($office->is_parking == 'parking')
-
-                                    {{ 'پارکینگ دارم' }}
-
+                                        {{ 'پارکینگ دارم' }}
                                     @else
-                                    {{ 'پارکینگ ندارم' }}
+                                        {{ 'پارکینگ ندارم' }}
+                                    @endif
+
+                                </span>
+                            </li>
+
+                            <li class="d-flex align-items-center mb-3">
+
+                                <i class="bx bx-check"></i><span class="fw-semibold mx-2">  وضعیت مرکز:</span> <span>
+                                    @if ($office->accept == 'Accept')
+                                        <span class="badge bg-label-success">{{ ' تائید  شده است.' }}</span>
+                                    @else
+                                    <span class="badge bg-label-danger">{{ 'تائید  نشده.' }}</span>
                                     @endif
 
                                 </span>
@@ -166,12 +180,13 @@
                         <small class="text-muted text-uppercase">تماس</small>
                         <ul class="list-unstyled mb-4 mt-3">
                             <li class="d-flex align-items-center mb-3">
-                                <i class="bx bx-check"></i><span class="fw-semibold mx-2">شماره تلنن:</span> <span>{{$office->user->address_office ?? 'ندارد'}}</span>
+                                <i class="bx bx-check"></i><span class="fw-semibold mx-2">شماره تلنن:</span>
+                                <span>{{ $office->user->address_office ?? 'ندارد' }}</span>
                             </li>
 
                             <li class="d-flex align-items-center mb-3">
                                 <i class="bx bx-envelope"></i><span class="fw-semibold mx-2">آدرس مرکز: </span>
-                                <span>{{$office->phone_office ?? 'ندارد'}}</span>
+                                <span>{{ $office->phone_office ?? 'ندارد' }}</span>
                             </li>
                         </ul>
                     </div>

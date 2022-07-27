@@ -147,16 +147,31 @@
                     <label class="form-label" for="multicol-last-name">@lang('public.wizard.center.c_history')</label>
                     <input type="text" name="work_history" value="{{ old('work_history') }}" id="multicol-last-name"
                         class="form-control" placeholder="سابقه کاری ">
+                        <span class="error">
+                            @error('work_history')
+                                {{ $message }}
+                            @enderror
+                        </span>
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-last-name">@lang('public.wizard.center.c_area')</label>
                     <input type="text" name="area" value="{{ old('area') }}" id="multicol-last-name"
                         class="form-control" placeholder="متراژ کل مرکز">
+                        <span class="error">
+                            @error('area')
+                                {{ $message }}
+                            @enderror
+                        </span>
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-last-name">@lang('public.wizard.center.c_apprentice')</label>
                     <input type="text" name="apprentice" value="{{ old('apprentice') }}" id="multicol-last-name"
                         class="form-control" placeholder="تعداد شاگرد">
+                        <span class="error">
+                            @error('apprentice')
+                                {{ $message }}
+                            @enderror
+                        </span>
                 </div>
 
                 <div class="col-md-6">
@@ -213,8 +228,8 @@
                     <label class="form-label" for="multicol-country">@lang('public.wizard.center.c_accept')</label>
                     <select id="multicol-country" name="accept" class="select2 form-select" data-allow-clear="true">
                         <option value="">انتخاب</option>
-                        <option value="0">مورد تائید نیست</option>
-                        <option value="1">مورد تائید هست</option>
+                        <option value="NotAccept">مورد تائید نیست</option>
+                        <option value="Accept">مورد تائید هست</option>
                     </select>
                     <span class="error">
                         @error('accept')

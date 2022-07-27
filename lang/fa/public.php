@@ -13,7 +13,7 @@ return [
         'title agents'=>'صفحه نمایندگان',
         'title agents'=>'صفحه نمایندگان',
         'title office create'=>' اضافه کردن مرکز',
-        'title  office show'=>' صفحه نمایش  مرکز',
+        'title office show'=>' صفحه نمایش  مرکز',
         'title user create'=>' اضافه کردن کارمند',
         'title agent create'=>' اضافه کردن نماینده',
         'title agent marketers'=>' اضافه کردن بازاریاب',

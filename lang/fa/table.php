@@ -30,6 +30,8 @@ return [
             'work_history'=>'سابقه کاری ',
             'How to cooperate'=>'نحوه همکاری',
             'How to contract'=>'نحوه قرار داد',
+            'date'=>'تاریخ ثبت',
+            'share code'=>' کد اشتراک',
 
         ],
         'offices'=>[

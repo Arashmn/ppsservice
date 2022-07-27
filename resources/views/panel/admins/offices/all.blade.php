@@ -115,26 +115,36 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>@lang('table.Dadatable.offices.subject')</th>
+                            <th>@lang('table.Dadatable.users.share code')</th>
                             <th>@lang('table.Dadatable.offices.title')</th>
+                            <th>@lang('table.Dadatable.offices.subject')</th>
                             <th>@lang('table.Dadatable.offices.management')</th>
                             <th>@lang('table.Dadatable.offices.license_number')</th>
                             <th>@lang('table.Dadatable.offices.work_history')</th>
+                            <th>@lang('table.Dadatable.users.date')</th>
                             <th>@lang('table.Dadatable.offices.accept')</th>
                             <th>@lang('table.Dadatable.offices.actions')</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($offices as $office)
+                        @foreach ($offices as $key=> $office)
                             <tr>
+                                <td>{{ $key +1 }}</td>
                                 <td>{{ $office->id }}</td>
-                                <td>{{ $office->subject }}</td>
                                 <td>{{ $office->title }}</td>
-                                <td>{{ $office->management  }}</td>
+                                <td>{{ $office->subject }}</td>
+                                <td>{{ $office->user->name . ' '.$office->user->family  }}</td>
                                 <td>{{ $office->license_number  }}</td>
-                                <td>{{ $office->work_history }}</td>
-                                <td>{{ $office->accept }}</td>
+                                <td>{{ $office->work_history .' '.'سال' }}</td>
+                                <td>{{ $office->created_at }}</td>
+                                <td>
+                                    @if ($office->accept == 'Accept')
 
+                                    {{ 'تائید شد.' }}
+
+                                    @else
+                                    {{ 'تائید نشده ' }}
+                                    @endif
                                 <td>
                                     <div class="dropdown dropdown-inline mr-4">
                                       <button type="button" class="btn p-0 dropdown-toggle hide-arrow show" data-bs-toggle="dropdown" aria-expanded="true">
@@ -142,8 +152,9 @@
                                       </button>
                                       <div class="dropdown-menu show" data-popper-placement="bottom-start" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(106px, 27px);">
                                         <a href="{{ route('offices.show' , $office->id ) }}" class="dropdown-item">نمایش</a>
-                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-1"></i> ویرایش</a>
-                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i> حذف</a>
+                                        <a href="/" class="dropdown-item" class="bx bx-edit-alt me-1">ویرایش</a>
+                                        <a href="/" class="dropdown-item" class="bx bx-trash me-1">حذف</a>
+
                                       </div>
                                     </div>
                                   </td>
@@ -208,7 +219,7 @@
         $(document).ready(function() {
             $('#getUser').DataTable({
                 initComplete: function() {
-                    this.api().columns(1).every(function() {
+                    this.api().columns(2).every(function() {
                         var column = this;
                         var select = $(
                                 '<select class="form-control"><option value="">همه</option></select>'
