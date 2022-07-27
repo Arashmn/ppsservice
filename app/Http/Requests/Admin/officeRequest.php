@@ -36,6 +36,7 @@ class officeRequest extends FormRequest
             'type'=>'required',
             'is_parking'=>'required',
             'is_owner'=>'required',
+            'file'=>'nullable|mimes:jpeg,png,jpg',
         ]);
 
 

@@ -63,7 +63,7 @@ class UserController extends Controller
 
         ];
 
-        $user=car_ins::create($dataIns);
 
+        $user->cars()->create($dataIns);
     }
 }

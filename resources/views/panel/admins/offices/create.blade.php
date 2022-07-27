@@ -146,17 +146,17 @@
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-last-name">@lang('public.wizard.center.c_history')</label>
                     <input type="text" name="work_history" value="{{ old('work_history') }}" id="multicol-last-name"
-                        class="form-control" placeholder="15 سال">
+                        class="form-control" placeholder="سابقه کاری ">
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-last-name">@lang('public.wizard.center.c_area')</label>
                     <input type="text" name="area" value="{{ old('area') }}" id="multicol-last-name"
-                        class="form-control" placeholder="150 متر">
+                        class="form-control" placeholder="متراژ کل مرکز">
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-last-name">@lang('public.wizard.center.c_apprentice')</label>
                     <input type="text" name="apprentice" value="{{ old('apprentice') }}" id="multicol-last-name"
-                        class="form-control" placeholder="10 نقر">
+                        class="form-control" placeholder="تعداد شاگرد">
                 </div>
 
                 <div class="col-md-6">
@@ -186,7 +186,7 @@
                     <label class="form-label" for="multicol-country">@lang('public.wizard.center.c_parking') *</label>
                     <select id="multicol-country" name="is_parking" class="select2 form-select" data-allow-clear="true">
                         <option value="">انتخاب</option>
-                        <option value="Parking">پارکینگ دارم</option>
+                        <option value="parking">پارکینگ دارم</option>
                         <option value="noParking">پارکینگ ندارم</option>
                     </select>
                     <span class="error">
@@ -224,9 +224,13 @@
                 </div>
                 <div class="col-md-3">
                     <label for="formFile" class="form-label">پروانه کسب</label>
-                    <input class="form-control" type="file" name="file" id="formFile" accept=".jpg">
+                    <input class="form-control" type="file" name="file" id="formFile" accept=".png, .jpg, .jpeg">
                     <div class="form-text">لطفا پروانه کسب را بصورت jpg آپلود کنید.</div>
-
+                    <span class="error">
+                        @error('file')
+                            {{ $message }}
+                        @enderror
+                    </span>
                 </div>
 
                 <div class="pt-4">

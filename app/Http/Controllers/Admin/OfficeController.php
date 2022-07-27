@@ -26,6 +26,8 @@ class OfficeController extends Controller
     public function store(officeRequest $request)
     {
 
+        dd($request->all());
+
         $token =  Str::random(8);
         $dataUSer = [
             'name' => $request->name,
@@ -63,7 +65,10 @@ class OfficeController extends Controller
         $user->offices()->create($dataIns);
     }
 
-    public function show()
+    public function show(Office $office)
     {
+
+
+        return view('panel.admins.offices.show', compact('office'));
     }
 }

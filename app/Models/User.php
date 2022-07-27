@@ -11,6 +11,8 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\Permission\Traits\HasRoles;
+use Hekmatinasser\Verta\Verta;
+
 
 class User extends Authenticatable
 {
@@ -68,24 +70,24 @@ class User extends Authenticatable
         $this->attributes['password'] = Hash::make($value);
     }
 
+    public function getCreatedAtAttribute($value)
+    {
+        return (new Verta($value))->format('Y-n-j');
+    }
+
+
     public function offices()
     {
 
-        return $this->hasMany(Office::class);
+        return $this->hasOne(Office::class);
 
     }
 
-    // public function car_inses()
-    // {
-    //    return $this->hasOne(car_ins::class);
-    // }
 
-
-    // public function office()
-    // {
-    //     return $this->belongsTo(Office::class);
-    // }
-
+    public function cars()
+    {
+       return $this->hasMany(car_ins::class);
+    }
 
 
 }
