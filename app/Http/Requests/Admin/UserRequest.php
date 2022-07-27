@@ -32,6 +32,7 @@ class UserRequest extends FormRequest
             'ins_type'=>'nullable',
             'ins_company'=>'nullable',
             'ins_serialNumber'=>'required|unique:car_ins|',
+            'password' => 'required|confirmed', 'min:8',
             'ins_premium'=>'nullable',
             'ins_expire'=>'nullable',
         ]);

@@ -93,11 +93,6 @@
                     <label class="form-label" for="basic-default-message">@lang('public.wizard.base.address')</label>
                     <textarea id="basic-default-message" name="address" class="form-control" placeholder="بلوار ...."></textarea>
                 </div>
-
-                
-
-
-
             </div>
             <hr class="my-4 mx-n4">
             <h6 class="fw-normal">2. @lang('public.wizard.car_ins.car info')</h6>

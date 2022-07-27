@@ -152,7 +152,7 @@
                                       </button>
                                       <div class="dropdown-menu show" data-popper-placement="bottom-start" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(106px, 27px);">
                                         <a href="{{ route('offices.show' , $office->id ) }}" class="dropdown-item">نمایش</a>
-                                        <a href="/" class="dropdown-item" class="bx bx-edit-alt me-1">ویرایش</a>
+                                        <a href="{{ route('offices.edit' , $office->id ) }}" class="dropdown-item" class="bx bx-edit-alt me-1">ویرایش</a>
                                         <a href="/" class="dropdown-item" class="bx bx-trash me-1">حذف</a>
 
                                       </div>

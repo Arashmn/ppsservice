@@ -9,6 +9,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\officeRequest;
+use App\Models\companyIns;
 
 class OfficeController extends Controller
 {
@@ -67,8 +68,20 @@ class OfficeController extends Controller
 
     public function show(Office $office)
     {
-
-
         return view('panel.admins.offices.show', compact('office'));
+    }
+
+    public function edit(Office $office)
+    {
+
+        $types=type::all();
+
+        return view('panel.admins.offices.edit',compact('office','types'));
+
+    }
+
+    public function update(Request $request)
+    {
+         dd($request->all());
     }
 }

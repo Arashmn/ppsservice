@@ -24,6 +24,7 @@ return [
         'register add user'=>'اضافه کردن کارمند جدید',
         'member add user'=>'اضافه کردن عضو جدید',
         'member add office'=>'اضافه کردن مرکز خدمات جدید',
+        'member edit office'=>' ویرایش مرکز خدمات',
         'member add agent'=>'اضافه کردن نماینده جدید',
         'member add marketers'=>'اضافه کردن بازاریاب جدید',
     ],
