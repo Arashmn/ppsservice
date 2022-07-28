@@ -38,8 +38,7 @@
                                     </ul> --}}
                                 </div>
                                 <a href="javascript:void(0)" class="btn btn-primary text-nowrap">
-                                    <i class="bx bx-user-check"></i> متصل
-                                </a>
+                                    <i class="bx bx-user-check"></i> تائید نهائی  </a>
                             </div>
                         </div>
                     </div>
@@ -48,26 +47,7 @@
         </div>
         <!--/ Header -->
 
-        <!-- Navbar pills -->
-        <div class="row">
-            <div class="col-md-12">
-                <ul class="nav nav-pills flex-column flex-sm-row mb-4">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="javascript:void(0);"><i class="bx bx-user"></i> پروفایل</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pages-profile-teams.html"><i class="bx bx-group"></i> تیم‌ها</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pages-profile-projects.html"><i class="bx bx-grid-alt"></i> پروژه‌ها</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pages-profile-connections.html"><i class="bx bx-link-alt"></i> اتصالات</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!--/ Navbar pills -->
+        
 
         <!-- User Profile Content -->
         <div class="row">
@@ -121,7 +101,7 @@
                             </li>
                             <li class="d-flex align-items-center mb-3">
                                 <i class="bx bx-user"></i><span class="fw-semibold mx-2">نام مدیر مرکز :</span>
-                                <span>{{ $office->user->name . ' ' . $office->user->family }}</span>    
+                                <span>{{ $office->user->name . ' ' . $office->user->family }}</span>
                             </li>
                             <li class="d-flex align-items-center mb-3">
                                 <i class="bx bx-check"></i><span class="fw-semibold mx-2"> شماره پروانه کسب:</span>

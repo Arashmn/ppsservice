@@ -224,7 +224,7 @@
                         @enderror
                     </span>
                 </div>
-                <div class="col-md-2">
+                {{-- <div class="col-md-2">
                     <label class="form-label" for="multicol-country">@lang('public.wizard.center.c_accept')</label>
                     <select id="multicol-country" name="accept" class="select2 form-select" data-allow-clear="true">
                         <option value="">انتخاب</option>
@@ -236,7 +236,7 @@
                             {{ $message }}
                         @enderror
                     </span>
-                </div>
+                </div> --}}
                 <div class="col-md-3">
                     <label for="formFile" class="form-label">پروانه کسب</label>
                     <input class="form-control" type="file" name="file" id="formFile" accept=".png, .jpg, .jpeg">

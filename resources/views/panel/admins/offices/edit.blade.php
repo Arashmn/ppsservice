@@ -246,19 +246,6 @@
                         @enderror
                     </span>
                 </div>
-                <div class="col-md-2">
-                    <label class="form-label" for="multicol-country">@lang('public.wizard.center.c_accept')</label>
-                    <select id="multicol-country" name="accept" class="select2 form-select" data-allow-clear="true">
-                        <option value="">انتخاب</option>
-                        <option value="NotAccept">مورد تائید نیست</option>
-                        <option value="Accept">مورد تائید هست</option>
-                    </select>
-                    <span class="error">
-                        @error('accept')
-                            {{ $message }}
-                        @enderror
-                    </span>
-                </div>
                 <div class="col-md-3">
                     <label for="formFile" class="form-label">پروانه کسب</label>
                     <input class="form-control" type="file" name="file" id="formFile" accept=".png, .jpg, .jpeg">
