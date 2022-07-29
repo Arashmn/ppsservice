@@ -62,6 +62,22 @@
             </ul>
             {{-- {{ isActive(['admin.permissions.index', 'admin.permissions.create' ])}} --}}
 
+            <!-- Task -->
+            <li class="menu-item ">
+                <a href="javascript:void(0);" class="menu-link menu-toggle">
+                    <i class="menu-icon tf-icons bx bx-store""></i>
+                    <div data-i18n="Roles & Permissions">@lang('public.menu.Tasks.task')</div>
+                </a>
+                <ul class="menu-sub">
+                    {{-- {{ isActiveSubMenu([ 'admin.permissions.index' ])}} --}}
+                    <li class="menu-item ">
+                        <a href="/" class="menu-link">
+                            <div data-i18n="Permission">@lang('public.menu.Tasks.save task')</div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
         <!-- services -->
         <li class="menu-item ">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
@@ -83,6 +99,7 @@
                 </li>
             </ul>
         </li>
+
 
 
         <!-- agent -->
@@ -132,8 +149,9 @@
             </ul>
         </li>
 
-        <!-- branch -->
-        <li class="menu-item ">
+
+         <!-- branch -->
+         <li class="menu-item ">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-store""></i>
                 <div data-i18n="Roles & Permissions">@lang('public.menu.branch.branchs')</div>

@@ -32,6 +32,11 @@ class Office extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function officeStatues()
+    {
+         return $this->hasMany(officeStatus::class);
+    }
+
     public function getCreatedAtAttribute($value)
     {
         return (new Verta($value))->formatDate('Y-n-j');

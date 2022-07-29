@@ -89,5 +89,12 @@ class User extends Authenticatable
        return $this->hasMany(car_ins::class);
     }
 
+    public function officeStatues()
+    {
+
+        return $this->hasMany(officeStatus::class);
+
+    }
+
 
 }

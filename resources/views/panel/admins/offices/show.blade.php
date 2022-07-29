@@ -47,7 +47,7 @@
         </div>
         <!--/ Header -->
 
-        
+
 
         <!-- User Profile Content -->
         <div class="row">
@@ -176,98 +176,37 @@
             <div class="col-xl-8 col-lg-7 col-md-7">
                 <!-- Activity Timeline -->
                 <div class="card card-action mb-4">
-                    <div class="card-header align-items-center">
-                        <h5 class="card-action-title mb-3"><i class="bx bx-list-ul bx-sm me-2"></i>خط زمانی فعالیت</h5>
-                        <div class="card-action-element btn-pinned">
-                            <div class="dropdown">
-                                <button type="button" class="btn dropdown-toggle hide-arrow p-0"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="bx bx-dots-vertical-rounded"></i>
-                                </button>
-                                <ul class="dropdown-menu dropdown-menu-end">
-                                    <li><a class="dropdown-item" href="javascript:void(0);">اشتراک گذاری خط زمانی</a></li>
-                                    <li><a class="dropdown-item" href="javascript:void(0);">پیشنهاد ویرایش</a></li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li><a class="dropdown-item" href="javascript:void(0);">گزارش خطا</a></li>
-                                </ul>
-                            </div>
+                    <div class="card">
+                        <h5 class="card-header"> وضعیت : {{ $office->title }}</h5>
+                        <div class="table-responsive text-nowrap">
+                          <table class="table table-hover" id="getUser">
+                            <thead>
+                              <tr>
+                                <th>ردیف</th>
+                                <th>نام کاربری</th>
+                                <th>توضیحات</th>
+                                <th>وضعیت مرکز</th>
+                                <th> ساعت ثبت شده</th>
+                                <th>تاریخ ثبت شده</th>
+                              </tr>
+                            </thead>
+                            <tbody class="table-border-bottom-0">
+
+                                @foreach ($officeStatus as  $officeStatu)
+                                <tr>
+                                    <td>{{ $officeStatu->id ?? 'خالی' }}</td>
+                                    <td>{{ $officeStatu->user->name ?? 'خالی' }}</td>
+                                    <td>{{ $officeStatu->detail  ?? 'خالی' }}</td>
+                                    <td>{{ $officeStatu->status ?? 'خالی' }}</td>
+                                    <td>{{ $officeStatu->time  ?? 'خالی' }}</td>
+                                    <td>{{ $officeStatu->Date ?? 'خالی' }}</td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                          </table>
                         </div>
-                    </div>
-                    <div class="card-body">
-                        <ul class="timeline ms-2">
-                            <li class="timeline-item timeline-item-transparent">
-                                <span class="timeline-point timeline-point-warning"></span>
-                                <div class="timeline-event">
-                                    <div class="timeline-header mb-1">
-                                        <h6 class="mb-0 mt-n1">ملاقات با مشتری</h6>
-                                        <small class="text-muted">امروز</small>
-                                    </div>
-                                    <p class="mb-2">ملاقات برای پروژه با استیو در 10:15 ق.ظ</p>
-                                    <div class="d-flex flex-wrap align-items-center">
-                                        <div class="avatar me-3 mt-1">
-                                            <img src="../../assets/img/avatars/3.png" alt="Avatar"
-                                                class="rounded-circle">
-                                        </div>
-                                        <div>
-                                            <h6 class="mb-1">بیل گیتس (مشتری)</h6>
-                                            <span>بنیان‌گذار مایکروسافت</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="timeline-item timeline-item-transparent">
-                                <span class="timeline-point timeline-point-info"></span>
-                                <div class="timeline-event">
-                                    <div class="timeline-header mb-1">
-                                        <h6 class="mb-0 mt-n1">ایجاد یک پروژه جدید برای مشتری</h6>
-                                        <small class="text-muted">2 روز قبل</small>
-                                    </div>
-                                    <p class="mb-0">لورم ایپسوم متن ساختگی با تولید</p>
-                                </div>
-                            </li>
-                            <li class="timeline-item timeline-item-transparent">
-                                <span class="timeline-point timeline-point-primary"></span>
-                                <div class="timeline-event">
-                                    <div class="timeline-header mb-1">
-                                        <h6 class="mb-0 mt-n1">لورم ایپسوم متن ساختگی با تولید</h6>
-                                        <small class="text-muted">6 روز قبل</small>
-                                    </div>
-                                    <p class="mb-2">
-                                        ارسال شده از طرف تونی استارک
-                                        <img src="../../assets/img/avatars/4.png" class="rounded-circle ms-3"
-                                            alt="avatar" height="20" width="20">
-                                    </p>
-                                    <div class="d-flex flex-wrap gap-2">
-                                        <a href="javascript:void(0)" class="me-3">
-                                            <img src="../../assets/img/icons/misc/pdf.png" alt="Document image"
-                                                width="20" class="me-2">
-                                            <span class="h6">راهنمای برنامه</span>
-                                        </a>
-                                        <a href="javascript:void(0)">
-                                            <img src="../../assets/img/icons/misc/doc.png" alt="Excel image"
-                                                width="20" class="me-2">
-                                            <span class="h6">نتایج بررسی‌ها</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="timeline-item timeline-item-transparent">
-                                <span class="timeline-point timeline-point-success"></span>
-                                <div class="timeline-event pb-0">
-                                    <div class="timeline-header mb-1">
-                                        <h6 class="mb-0 mt-n1">لورم ایپسوم متن ساختگی</h6>
-                                        <small class="text-muted">10 روز قبل</small>
-                                    </div>
-                                    <p class="mb-0">لورم ایپسوم متن ساختگی با تولید</p>
-                                </div>
-                            </li>
-                            <li class="timeline-end-indicator">
-                                <i class="bx bx-check-circle"></i>
-                            </li>
-                        </ul>
-                    </div>
+                      </div>
+
                 </div>
                 <!--/ Activity Timeline -->
                 <div class="row">

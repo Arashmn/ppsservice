@@ -7,8 +7,10 @@ return [
         'search filter'=>'فیلتر کردن نقش ',
         'search filter jobs'=>'فیلتر کردن نوع خدمت ',
         'search filter sex'=>'فیلتر کردن  جنسیت ',
+        'search filter title'=>'فیلتر کردن عنوان مرکز ',
         'user list'=>'لیست کاربران',
         'add user'=>'کارمند جدید',
+        'add Task'=>'اضافه کردن وظیفه جدید',
         'add member'=>'عضو جدید',
 
         'users'=>[
@@ -35,7 +37,6 @@ return [
 
         ],
         'offices'=>[
-
             'subject'=>'نوع خدمت',
             'title'=>'نام مرکز',
             'management'=>'نام مدیر',
@@ -48,6 +49,8 @@ return [
             'is_parking'=>'پارکینگ',
             'accept'=>'وضعیت مرکز',
             'actions'=>'عملیات',
+            'actions'=>'عملیات',
+            'actions'=>'عملیات',
         ],
         'agents'=>[
             'subject'=>'شرکت بیمه',
@@ -59,7 +62,15 @@ return [
             'accept'=>'وضعیت نماینده',
             'actions'=>'عملیات'
         ],
-
+        'Tasks'=>[
+            'office'=>'نام مراکز /  نمایندگان',
+            'name accpet'=>' نام ثبت کننده',
+            'detail'=>'توضیحات',
+            'status'=>'وضعیت',
+            'date'=>'تاریخ ثبت ',
+            'accept'=>'وضعیت نماینده',
+            'actions'=>'عملیات'
+        ],
         'permissions'=>[
 
             'name'=>'نام ',

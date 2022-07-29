@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\officeRequest;
 use App\Models\companyIns;
+use App\Models\officeStatus;
 
 class OfficeController extends Controller
 {
@@ -68,7 +69,8 @@ class OfficeController extends Controller
 
     public function show(Office $office)
     {
-        return view('panel.admins.offices.show', compact('office'));
+        $officeStatus=officeStatus::where('office_id',$office->id)->get();
+        return view('panel.admins.offices.show', compact('office','officeStatus'));
     }
 
     public function edit(Office $office)

@@ -66,6 +66,10 @@ return [
             'count members'=>'آمار اعضاء',
             'count marketers'=>'آمار بازاریاب ها',
         ],
+        'Tasks'=>[
+            'task'=>'فعالیت ها ',
+            'save task'=>'تمام فعالیت ها',
+        ],
         'record accident'=>'ثبت حادثه',
 
     ],
