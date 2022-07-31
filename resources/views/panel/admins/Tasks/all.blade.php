@@ -88,6 +88,7 @@
 
             </div>
         </div>
+    </div>
     @endsection
     @section('vendor-js')
         <script src="{{ asset('assets/panel/vendor/libs/datatables/jquery.dataTables.js') }}"></script>

@@ -10,8 +10,11 @@ return [
         'search filter title'=>'فیلتر کردن عنوان مرکز ',
         'user list'=>'لیست کاربران',
         'add user'=>'کارمند جدید',
-        'add Task'=>'اضافه کردن وظیفه جدید',
+        'add Task'=>'وظیفه جدید',
         'add member'=>'عضو جدید',
+        'add office'=>'مرکز جدید',
+        'add marketers'=>'بازاریاب جدید',
+        'add agent'=>'نماینده جدید',
 
         'users'=>[
             'name'=>'نام',

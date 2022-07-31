@@ -23,6 +23,16 @@
                         </div>
                     </div>
                 </div>
+                <div
+                    class="dt-action-buttons text-xl-end text-lg-start text-md-end text-start d-flex align-items-center justify-content-end flex-md-row flex-column mb-3 mb-md-0">
+
+                    <div class="dt-buttons">
+
+                        <a href="" class="dt-button add-new btn btn-primary"><i
+                                class="bx bx-plus me-0 me-lg-2"></i><span
+                                class="d-none d-lg-inline-block">@lang('table.Dadatable.add agent')</span></a>
+                    </div>
+                </div>
 
                 <div class="d-flex justify-content-between align-items-center row py-3 gap-3 gap-md-0">
                     <div class="col-md-4 user_role"></div>

@@ -101,8 +101,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="float-right">
-                    <a href="{{ route('users.create') }}" class="btn btn-primary text-white" style="margin-right: 983px;margin-top: -106px">@lang('table.Dadatable.add user')</a>
+                <div
+                    class="dt-action-buttons text-xl-end text-lg-start text-md-end text-start d-flex align-items-center justify-content-end flex-md-row flex-column mb-3 mb-md-0">
+
+                    <div class="dt-buttons">
+
+                        <a href="" class="dt-button add-new btn btn-primary"><i
+                                class="bx bx-plus me-0 me-lg-2"></i><span
+                                class="d-none d-lg-inline-block">@lang('table.Dadatable.add office')</span></a>
+                    </div>
                 </div>
                 <div class="d-flex justify-content-between align-items-center row py-3 gap-3 gap-md-0">
                     <div class="col-md-4 user_role"></div>
@@ -127,38 +134,40 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($offices as $key=> $office)
+                        @foreach ($offices as $key => $office)
                             <tr>
-                                <td>{{ $key +1 }}</td>
+                                <td>{{ $key + 1 }}</td>
                                 <td>{{ $office->id }}</td>
                                 <td>{{ $office->title }}</td>
                                 <td>{{ $office->subject }}</td>
-                                <td>{{ $office->user->name . ' '.$office->user->family  }}</td>
-                                <td>{{ $office->license_number  }}</td>
-                                <td>{{ $office->work_history .' '.'سال' }}</td>
+                                <td>{{ $office->user->name . ' ' . $office->user->family }}</td>
+                                <td>{{ $office->license_number }}</td>
+                                <td>{{ $office->work_history . ' ' . 'سال' }}</td>
                                 <td>{{ $office->created_at }}</td>
                                 <td>
                                     @if ($office->accept == 'Accept')
-
-                                    {{ 'تائید شد.' }}
-
+                                        {{ 'تائید شد.' }}
                                     @else
-                                    {{ 'تائید نشده ' }}
+                                        {{ 'تائید نشده ' }}
                                     @endif
                                 <td>
                                     <div class="dropdown dropdown-inline mr-4">
-                                      <button type="button" class="btn p-0 dropdown-toggle hide-arrow show" data-bs-toggle="dropdown" aria-expanded="true">
-                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                      </button>
-                                      <div class="dropdown-menu show" data-popper-placement="bottom-start" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(106px, 27px);">
-                                        <a href="{{ route('offices.show' , $office->id ) }}" class="dropdown-item">نمایش</a>
-                                        <a href="{{ route('offices.edit' , $office->id ) }}" class="dropdown-item" class="bx bx-edit-alt me-1">ویرایش</a>
-                                        <a href="/" class="dropdown-item" class="bx bx-trash me-1">حذف</a>
+                                        <button type="button" class="btn p-0 dropdown-toggle hide-arrow show"
+                                            data-bs-toggle="dropdown" aria-expanded="true">
+                                            <i class="bx bx-dots-vertical-rounded"></i>
+                                        </button>
+                                        <div class="dropdown-menu show" data-popper-placement="bottom-start"
+                                            style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(106px, 27px);">
+                                            <a href="{{ route('offices.show', $office->id) }}"
+                                                class="dropdown-item">نمایش</a>
+                                            <a href="{{ route('offices.edit', $office->id) }}" class="dropdown-item"
+                                                class="bx bx-edit-alt me-1">ویرایش</a>
+                                            <a href="/" class="dropdown-item" class="bx bx-trash me-1">حذف</a>
 
-                                      </div>
+                                        </div>
                                     </div>
-                                  </td>
-                               
+                                </td>
+
                             </tr>
                         @endforeach
                     </tbody>
@@ -170,7 +179,7 @@
     </div>
 @endsection
 @section('vendor-js')
-<script src="{{ asset('assets/panel/vendor/libs/datatables/jquery.dataTables.js') }}"></script>
+    <script src="{{ asset('assets/panel/vendor/libs/datatables/jquery.dataTables.js') }}"></script>
     <script src="{{ asset('assets/panel/vendor/libs/datatables-bs5/datatables-bootstrap5.js') }}"></script>
     <script src="{{ asset('assets/panel/vendor/libs/datatables-responsive/datatables.responsive.js') }}"></script>
     <script src="{{ asset('assets/panel/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.js') }}"></script>

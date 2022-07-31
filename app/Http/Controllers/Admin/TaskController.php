@@ -20,7 +20,6 @@ class TaskController extends Controller
     public function create()
     {
 
-
         $offices = Office::query()->where('type', 'office')->get();
         $agents=office::query()->where('type','agent')->get();
         $markets=office::query()->Where('type','market')->get();

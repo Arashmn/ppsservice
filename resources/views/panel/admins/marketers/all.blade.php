@@ -7,10 +7,8 @@
     <link rel="stylesheet" href="{{ asset('assets/panel/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.css') }}">
 @endsection
 @section('content')
-
     <!-- Users List Table -->
     <div class="card">
-
         <div class="card-header border-bottom">
 
             <div class="card-body inline">
@@ -21,6 +19,16 @@
                             <div id="sex-filter"></div>
                         </div>
 
+                    </div>
+                </div>
+                <div
+                    class="dt-action-buttons text-xl-end text-lg-start text-md-end text-start d-flex align-items-center justify-content-end flex-md-row flex-column mb-3 mb-md-0">
+
+                    <div class="dt-buttons">
+
+                        <a href="" class="dt-button add-new btn btn-primary"><i
+                                class="bx bx-plus me-0 me-lg-2"></i><span
+                                class="d-none d-lg-inline-block">@lang('table.Dadatable.add marketers')</span></a>
                     </div>
                 </div>
 
@@ -57,16 +65,21 @@
 
                                 <td>
                                     <div class="dropdown dropdown-inline mr-4">
-                                      <button type="button" class="btn p-0 dropdown-toggle hide-arrow show" data-bs-toggle="dropdown" aria-expanded="true">
-                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                      </button>
-                                      <div class="dropdown-menu show" data-popper-placement="bottom-start" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(106px, 27px);">
-                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-1"></i> نمایش</a>
-                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-1"></i> ویرایش</a>
-                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i> حذف</a>
-                                      </div>
+                                        <button type="button" class="btn p-0 dropdown-toggle hide-arrow show"
+                                            data-bs-toggle="dropdown" aria-expanded="true">
+                                            <i class="bx bx-dots-vertical-rounded"></i>
+                                        </button>
+                                        <div class="dropdown-menu show" data-popper-placement="bottom-start"
+                                            style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(106px, 27px);">
+                                            <a class="dropdown-item" href="javascript:void(0);"><i
+                                                    class="bx bx-edit-alt me-1"></i> نمایش</a>
+                                            <a class="dropdown-item" href="javascript:void(0);"><i
+                                                    class="bx bx-edit-alt me-1"></i> ویرایش</a>
+                                            <a class="dropdown-item" href="javascript:void(0);"><i
+                                                    class="bx bx-trash me-1"></i> حذف</a>
+                                        </div>
                                     </div>
-                                  </td>
+                                </td>
                                 {{-- <td>{{ $user->name }}</td> --}}
 
                                 {{-- <td>
@@ -99,7 +112,7 @@
     </div>
 @endsection
 @section('vendor-js')
-<script src="{{ asset('assets/panel/vendor/libs/datatables/jquery.dataTables.js') }}"></script>
+    <script src="{{ asset('assets/panel/vendor/libs/datatables/jquery.dataTables.js') }}"></script>
     <script src="{{ asset('assets/panel/vendor/libs/datatables-bs5/datatables-bootstrap5.js') }}"></script>
     <script src="{{ asset('assets/panel/vendor/libs/datatables-responsive/datatables.responsive.js') }}"></script>
     <script src="{{ asset('assets/panel/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.js') }}"></script>

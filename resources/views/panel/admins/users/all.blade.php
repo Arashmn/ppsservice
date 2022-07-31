@@ -101,9 +101,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="float-right">
-                    <a href="{{ route('users.create') }}" class="btn btn-primary text-white" style="margin-right: 983px;margin-top: -106px">@lang('table.Dadatable.add user')</a>
+                <div
+                    class="dt-action-buttons text-xl-end text-lg-start text-md-end text-start d-flex align-items-center justify-content-end flex-md-row flex-column mb-3 mb-md-0">
+
+                    <div class="dt-buttons">
+
+                        <a href="{{ route('users.create') }}" class="dt-button add-new btn btn-primary"><i
+                                class="bx bx-plus me-0 me-lg-2"></i><span
+                                class="d-none d-lg-inline-block">@lang('table.Dadatable.add user')</span></a>
+                    </div>
                 </div>
+                
                 <div class="d-flex justify-content-between align-items-center row py-3 gap-3 gap-md-0">
                     <div class="col-md-4 user_role"></div>
                     <div class="col-md-4 user_plan"></div>

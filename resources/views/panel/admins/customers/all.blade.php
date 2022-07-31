@@ -3,8 +3,7 @@
 @section('vendor-css')
 
     <link rel="stylesheet" href="{{ asset('assets/panel/vendor/libs/datatables-bs5/datatables.bootstrap5.css') }}">
-    <link rel="stylesheet"
-        href="{{ asset('assets/panel/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/panel/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/panel/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.css') }}">
 @endsection
 @section('content')
@@ -23,8 +22,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="float-right">
-                    <a href="{{ route('users.create') }}" class="btn btn-primary text-white">@lang('table.Dadatable.add member')</a>
+                <div
+                    class="dt-action-buttons text-xl-end text-lg-start text-md-end text-start d-flex align-items-center justify-content-end flex-md-row flex-column mb-3 mb-md-0">
+
+                    <div class="dt-buttons">
+
+                        <a href="" class="dt-button add-new btn btn-primary"><i
+                                class="bx bx-plus me-0 me-lg-2"></i><span
+                                class="d-none d-lg-inline-block">@lang('table.Dadatable.add member')</span></a>
+                    </div>
                 </div>
                 <div class="d-flex justify-content-between align-items-center row py-3 gap-3 gap-md-0">
                     <div class="col-md-4 user_role"></div>
@@ -53,7 +59,7 @@
                                 <td>{{ $customer->id }}</td>
                                 <td>{{ $customer->name }}</td>
                                 <td>{{ $customer->family }}</td>
-                                <td>{{ $customer->father  }}</td>
+                                <td>{{ $customer->father }}</td>
                                 <td>{{ $customer->code_meli }}</td>
                                 <td>{{ $customer->mobile_number }}</td>
                                 <td>{{ $customer->sex }}</td>
@@ -128,4 +134,4 @@
     </script>
 
     {{-- <script src="{{ asset('assets/
-    @endsection
+        @endsection
