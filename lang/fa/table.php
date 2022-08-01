@@ -6,6 +6,7 @@ return [
 
         'search filter'=>'فیلتر کردن نقش ',
         'search filter jobs'=>'فیلتر کردن نوع خدمت ',
+        'search filter name persian'=>'فیلتر کردن نام فارسی  ',
         'search filter sex'=>'فیلتر کردن  جنسیت ',
         'search filter title'=>'فیلتر کردن عنوان مرکز ',
         'user list'=>'لیست کاربران',
@@ -13,6 +14,7 @@ return [
         'add Task'=>'وظیفه جدید',
         'add member'=>'عضو جدید',
         'add office'=>'مرکز جدید',
+        'add permissions'=>'دسترسی جدید',
         'add marketers'=>'بازاریاب جدید',
         'add agent'=>'نماینده جدید',
 
@@ -81,6 +83,10 @@ return [
             'actions'=>'عملیات'
         ],
         'roles'=>[
+
+            'name'=>'نام انگلیسی',
+            'name persian'=>'نام فارسی',
+            'actions'=>'عملیات',
 
             'title'=>'لیست نقش ها',
             'mengmant'=>'مدیر',

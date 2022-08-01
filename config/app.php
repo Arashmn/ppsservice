@@ -187,6 +187,7 @@ return [
          */
         Spatie\Permission\PermissionServiceProvider::class,
         Hekmatinasser\Verta\Laravel\VertaServiceProvider::class,
+        RealRashid\SweetAlert\SweetAlertServiceProvider::class,
 
 
 
@@ -216,6 +217,8 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
         'Verta' => Hekmatinasser\Verta\Verta::class,
+        'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
+
 
     ])->toArray(),
 

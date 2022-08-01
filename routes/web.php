@@ -4,6 +4,8 @@ use App\Http\Controllers\Admin\AgentController;
 use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\MarketerController;
 use App\Http\Controllers\Admin\OfficeController;
+use App\Http\Controllers\Admin\PermissionController;
+use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\TaskController;
 use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
@@ -26,6 +28,8 @@ Route::resource('offices',OfficeController::class);
 Route::resource('agents',AgentController::class);
 Route::resource('marketers',MarketerController::class);
 Route::resource('tasks',TaskController::class);
+Route::resource('roles',RoleController::class);
+Route::resource('permissions',PermissionController::class);
 // Route::get('/',[UserController::class,'index']);
 
 Route::get('/dashboard', function () {

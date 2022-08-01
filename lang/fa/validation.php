@@ -203,5 +203,7 @@ return [
         "apprentice"=>'تعداد شاگرد',
         "work_history"=>'سابقه کاری',
         "area"=>'متراژ',
+        "persian_name"=>'نام فارسی',
+        "permissions"=>'دسترسی',
     ],
 ];

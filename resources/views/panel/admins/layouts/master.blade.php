@@ -31,6 +31,7 @@
                         @yield('content')
                     </div>
                     <!-- / Content -->
+                    @include('sweetalert::alert')
                     <!-- Footer -->
                     @include('panel.admins.layouts.footer')
                     <!-- / Footer -->

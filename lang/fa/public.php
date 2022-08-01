@@ -3,16 +3,31 @@
 return [
 
 
+    'sweetAlert'=>[
+
+        'success'=>[
+
+            'Success role add'=>'نقش جدید ایجاد شد.',
+            'Success permission add'=>'دسترسی جدید ایجاد شد.',
+            'Success Title'=>' موفقیت',
+        ]
+
+
+    ],
+
     'title'=>[
 
         'title index'=>'صفحه اصلی ',
         'title users'=>'صفحه کارمند',
         'title offices'=>'صفحه مراکز',
+        'title permissions'=>'صفحه دسترسی ها',
         'title members'=>'صفحه اعضاء',
         'title marketers'=>'صفحه بازاریاب',
         'title agents'=>'صفحه نمایندگان',
         'title agents'=>'صفحه نمایندگان',
         'title office create'=>' اضافه کردن مرکز',
+        'title role create'=>' اضافه کردن نقش',
+        'title permission create'=>' اضافه کردن دسترسی',
         'title task  create'=>' اضافه کردن فعالیت جدید',
         'title office show'=>' صفحه نمایش  مرکز',
         'title user create'=>' اضافه کردن کارمند',
@@ -177,6 +192,14 @@ return [
             'a_history'=>'سابقه کاری',
 
             'c_accept'=>'تائید مراکز',
+        ]
+        ,
+        'role'=>[
+
+            'name'=>'عنوان نقش به انگلیسی',
+            'name perisan'=>' عنوان نقش به فارسی',
+            'permissions'=>'دسترسی ها',
+
         ]
     ]
 
