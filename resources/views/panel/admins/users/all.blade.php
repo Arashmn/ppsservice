@@ -111,7 +111,7 @@
                                 class="d-none d-lg-inline-block">@lang('table.Dadatable.add user')</span></a>
                     </div>
                 </div>
-                
+
                 <div class="d-flex justify-content-between align-items-center row py-3 gap-3 gap-md-0">
                     <div class="col-md-4 user_role"></div>
                     <div class="col-md-4 user_plan"></div>
@@ -125,7 +125,6 @@
                             <th>#</th>
                             <th>@lang('table.Dadatable.users.name')</th>
                             <th>@lang('table.Dadatable.users.family')</th>
-                            <th>@lang('table.Dadatable.users.father')</th>
                             <th>@lang('table.Dadatable.users.code_meli')</th>
                             <th>@lang('table.Dadatable.users.mobile')</th>
                             <th>@lang('table.Dadatable.users.email')</th>
@@ -140,47 +139,31 @@
                                 <td>{{ $user->id }}</td>
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->family }}</td>
-                                <td>{{ $user->father  }}</td>
                                 <td>{{ $user->code_meli }}</td>
                                 <td>{{ $user->mobile_number }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td>{{ $user->sex }}</td>
-                                <td>@foreach ($user->roles as $role)
-                                    {{ $role->persian_name }}
-                                @endforeach
-                            </td>
                                 <td>
-                                    <div class="dropdown">
-                                      <button type="button" class="btn p-0 dropdown-toggle hide-arrow show" data-bs-toggle="dropdown" aria-expanded="true">
-                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                      </button>
-                                      <div class="dropdown-menu show" data-popper-placement="bottom-start" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(106px, 27px);">
-                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-1"></i> ویرایش</a>
-                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i> حذف</a>
-                                      </div>
-                                    </div>
-                                  </td>
-                                {{-- <td>{{ $user->name }}</td> --}}
-
-                                {{-- <td>
                                     @foreach ($user->roles as $role)
                                         {{ $role->persian_name }}
                                     @endforeach
-                                </td> --}}
-                                {{-- <td>
-                                    <div class="dropdown">
-                                        <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                            data-bs-toggle="dropdown">
-                                            <i class="bx bx-dots-vertical-rounded"></i>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="{{ route('admin.users.edit',$user->id) }}"><i class="bx bx-edit-alt me-1"></i>
-                                                ویرایش</a>
-                                            <a class="dropdown-item" href="/"><i class="bx bx-trash me-1"></i> حذف</a>
-
-                                        </div>
+                                </td>
+                                <td>
+                                <div class="dropdown dropdown-inline mr-4">
+                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow show"
+                                        data-bs-toggle="dropdown" aria-expanded="true">
+                                        <i class="bx bx-dots-vertical-rounded"></i>
+                                    </button>
+                                    <div class="dropdown-menu show " data-popper-placement="bottom-start"
+                                        style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(106px, 27px);">
+                                        <a href="{{ route('users.show',$user->id) }}" class="dropdown-item"
+                                            class="bx bx-edit-alt me-1">نمایش</a>
+                                        <a href="{{ route('users.edit',$user->id) }}" class="dropdown-item"
+                                            class="bx bx-edit-alt me-1">ویرایش</a>
+                                        <a href="/" class="dropdown-item" class="bx bx-trash me-1">حذف</a>
                                     </div>
-                                </td> --}}
+                                </td>
+                                </div>
                             </tr>
                         @endforeach
                     </tbody>
@@ -192,7 +175,7 @@
     </div>
 @endsection
 @section('vendor-js')
-<script src="{{ asset('assets/panel/vendor/libs/datatables/jquery.dataTables.js') }}"></script>
+    <script src="{{ asset('assets/panel/vendor/libs/datatables/jquery.dataTables.js') }}"></script>
     <script src="{{ asset('assets/panel/vendor/libs/datatables-bs5/datatables-bootstrap5.js') }}"></script>
     <script src="{{ asset('assets/panel/vendor/libs/datatables-responsive/datatables.responsive.js') }}"></script>
     <script src="{{ asset('assets/panel/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.js') }}"></script>
@@ -221,7 +204,7 @@
         $(document).ready(function() {
             $('#getUser').DataTable({
                 initComplete: function() {
-                    this.api().columns(3).every(function() {
+                    this.api().columns(7).every(function() {
                         var column = this;
                         var select = $(
                                 '<select class="form-control"><option value="">همه</option></select>'

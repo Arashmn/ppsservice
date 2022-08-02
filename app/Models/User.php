@@ -84,9 +84,9 @@ class User extends Authenticatable
     }
 
 
-    public function cars()
+    public function car()
     {
-       return $this->hasMany(car_ins::class);
+       return $this->hasOne(car_ins::class);
     }
 
     public function officeStatues()

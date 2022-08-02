@@ -66,4 +66,13 @@ class UserController extends Controller
 
         $user->cars()->create($dataIns);
     }
+    public function edit(User $user)
+    {
+        return view('panel.admins.users.edit',compact('user'));
+    }
+    public function show(User $user)
+    {
+
+        return view('panel.admins.users.show',compact('user'));
+    }
 }

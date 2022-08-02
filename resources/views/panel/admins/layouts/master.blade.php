@@ -50,6 +50,8 @@
     <!-- / Layout wrapper -->
     @include('panel.admins.layouts.script')
 
+    @yield('script')
+
 </body>
 
 </html>
