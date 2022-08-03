@@ -2,9 +2,10 @@
 
 namespace App\Http\Requests\Admin\Edit;
 
+use App\Http\Requests\Admin\parentRequest;
 use Illuminate\Foundation\Http\FormRequest;
 
-class UserRequest extends FormRequest
+class UserRequest extends parentRequest
 {
     /**
      * Determine if the user is authorized to make this request.

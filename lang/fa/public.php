@@ -9,6 +9,7 @@ return [
 
             'Success role add'=>'نقش جدید ایجاد شد.',
             'Success permission add'=>'دسترسی جدید ایجاد شد.',
+            'Success staff add'=>'کارمند جدید ایجاد شد.',
             'Success Title'=>' موفقیت',
         ]
 

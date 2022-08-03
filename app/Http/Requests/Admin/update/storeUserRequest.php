@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Http\Requests\Admin;
+namespace App\Http\Requests\Admin\update;
 
+use App\Http\Requests\Admin\parentRequest;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
-class UserRequest extends parentRequest
+class storeUserRequest extends parentRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,9 +25,9 @@ class UserRequest extends parentRequest
      */
     public function rules()
     {
-
         return array_merge(parent::rules(),[
-            'roles'=>'required'
-        ]);
+
+            // 'code_meli'=>[Rule::unique('users')->ignore($this->code_meli)];
+        ])
     }
 }

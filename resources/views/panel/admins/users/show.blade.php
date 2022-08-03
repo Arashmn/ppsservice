@@ -38,7 +38,7 @@
                                     </ul> --}}
                                 </div>
                                 <a href="javascript:void(0)" class="btn btn-primary text-nowrap">
-                                    <i class="bx bx-user-check"></i> تائید نهائی  </a>
+                                    <i class="bx bx-user-check"></i> بازنشانی کردن رمز عبور  </a>
                             </div>
                         </div>
                     </div>
@@ -63,7 +63,7 @@
                             </li>
                             <li class="d-flex align-items-center mb-3">
                                 <i class="bx bx-user"></i><span class="fw-semibold mx-2">نام خانوادگی :</span>
-                                <span>{{ $user->family  }}</span>
+                                <span>{{ $user->family }}</span>
                             </li>
                             <li class="d-flex align-items-center mb-3">
                                 <i class="bx bx-user"></i><span class="fw-semibold mx-2">نام پدر:</span>
@@ -71,26 +71,32 @@
                             </li>
                             <li class="d-flex align-items-center mb-3">
                                 <i class="bx bx-user"></i><span class="fw-semibold mx-2">جنسیت:</span>
-                                <span>{{ $user->sex }}</span>
+                                <span>{{ $user->sex == 'male' ? 'مرد' : 'زن' }}</span>
                             </li>
 
                             <li class="d-flex align-items-center mb-3">
                                 <i class="bx bx-check"></i><span class="fw-semibold mx-2"> تاریخ تولد:</span>
-                                <span>{{ $user->birthday }}</span>
+                                <span>{{ $user->birthday ?? 'ندارد' }}</span>
                             </li>
+
                             <li class="d-flex align-items-center mb-3">
                                 <i class="bx bx-check"></i><span class="fw-semibold mx-2"> کد ملی:</span>
                                 <span>{{ $user->code_meli }}</span>
+                            </li>
+                            <li class="d-flex align-items-center mb-3">
+                                <i class="bx bx-check"></i><span class="fw-semibold mx-2"> سمت :</span>
+                                <span> 
+                                        @foreach ($user->roles as $role)
+                                            {{ $role->persian_name }}
+                                        @endforeach
+
+                                </span>
                             </li>
 
 
                         </ul>
                         <small class="text-muted text-uppercase">تماس</small>
                         <ul class="list-unstyled mb-4 mt-3">
-                            <li class="d-flex align-items-center mb-3">
-                                <i class="bx bx-envelope"></i><span class="fw-semibold mx-2">آدرس منزل  :</span>
-                                <span>{{ $user->address ?? 'ندارد' }}</span>
-                            </li>
                             <li class="d-flex align-items-center mb-3">
                                 <i class="bx bx-check"></i><span class="fw-semibold mx-2">شماره موبایل:</span>
                                 <span>{{ $user->mobile_number }}</span>
@@ -100,66 +106,16 @@
                                 <i class="bx bx-envelope"></i><span class="fw-semibold mx-2">ایمیل:</span>
                                 <span>{{ $user->email ?? 'ندارد' }}</span>
                             </li>
+                            <li class="d-flex align-items-center mb-4">
+                                <span class="fw-semibold mx-2">آدرس منزل:</span>
+                                <span>{{ $user->address ?? 'ندارد' }}</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
                 <!--/ About User -->
                 <!-- Profile Overview -->
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <small class="text-muted text-uppercase">خودرو</small>
-                        <ul class="list-unstyled mb-4 mt-3">
 
-                            <li class="d-flex align-items-center mb-3">
-                                <i class="bx bx-user"></i><span class="fw-semibold mx-2">نام ماشین :</span>
-                                <span>{{ $user->car->car_name }}</span>
-                            </li>
-                            <li class="d-flex align-items-center mb-3">
-                                <i class="bx bx-user"></i><span class="fw-semibold mx-2"> شماره پلاک ماشین :</span>
-                                <span>{{ $user->car->car_tage  }}</span>
-                            </li>
-                            <li class="d-flex align-items-center mb-3">
-                                <i class="bx bx-check"></i><span class="fw-semibold mx-2"> شماره موتور ماشین:</span>
-                                <span>{{ $user->car->car_number  }}</span>
-                            </li>
-                            <li class="d-flex align-items-center mb-3">
-                                <i class="bx bx-check"></i><span class="fw-semibold mx-2"> شماره شاسی ماشین:</span>
-                                <span>{{ $user->car->car_chassis  }}</span>
-                            </li>
-                            <li class="d-flex align-items-center mb-3">
-                                <i class="bx bx-check"></i><span class="fw-semibold mx-2"> سال ماشین:</span>
-                                <span>{{ $user->car->car_year . ' ' . 'سال' }}</span>
-                            </li>
-
-                            <small class="text-muted text-uppercase">بیمه</small>
-                            <ul class="list-unstyled mb-4 mt-3">
-                                <li class="d-flex align-items-center mb-3">
-                                    <i class="bx bx-check"></i><span class="fw-semibold mx-2">نوع  بیمه:</span>
-                                    <span>{{ $user->car->ins_type }}</span>
-                                </li>
-
-                                <li class="d-flex align-items-center mb-3">
-                                    <i class="bx bx-envelope"></i><span class="fw-semibold mx-2">شرکت بیمه:</span>
-                                    <span>{{ $user->car->ins_company ?? 'ندارد' }}</span>
-                                </li>
-                                <li class="d-flex align-items-center mb-3">
-                                    <i class="bx bx-envelope"></i><span class="fw-semibold mx-2">سریال بیمه نامه:</span>
-                                    <span>{{ $user->car->ins_serialNumber  ?? 'ندارد' }}</span>
-                                </li>
-                                <li class="d-flex align-items-center mb-3">
-                                    <i class="bx bx-envelope"></i><span class="fw-semibold mx-2">هزینه بیمه:</span>
-                                    <span>{{ $user->car->ins_premium  ?? 'ندارد' }}</span>
-                                </li>
-                                <li class="d-flex align-items-center mb-3">
-                                    <i class="bx bx-envelope"></i><span class="fw-semibold mx-2">تاریخ انقضاء بیمه:</span>
-                                    <span>{{ $user->car->ins_expire  ?? 'ندارد' }}</span>
-                                </li>
-                            </ul>
-                        </ul>
-
-                    </div>
-                </div>
-                <!--/ Profile Overview -->
             </div>
             <div class="col-xl-8 col-lg-7 col-md-7">
                 <!-- Activity Timeline -->
