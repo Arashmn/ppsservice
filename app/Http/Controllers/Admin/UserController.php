@@ -12,6 +12,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\UserRequest;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Requests\Admin\parentRequest;
+use App\Http\Requests\Admin\update\storeUserRequest;
 
 class UserController extends Controller
 {
@@ -53,7 +54,7 @@ class UserController extends Controller
         return view('panel.admins.users.edit',compact('user','roles'));
     }
 
-    public function update(UserRequest $request,User $user)
+    public function update(storeUserRequest $request,User $user)
     {
 
         dd($request->all());

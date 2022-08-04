@@ -30,7 +30,6 @@ class parentRequest extends FormRequest
             'code_meli'=>'required|unique:users|regex:/^([0-9]){10}$/',
             'email'=>'nullable',
             'sex'=>'required',
-            'password'=>'nullable|min:8|confirmed',
             'mobile_number'=>'required|unique:users|numeric|digits:11|regex:/(09)[0-9]{9}/',
             'birthday'=>'nullable',
             'address'=>'nullable',

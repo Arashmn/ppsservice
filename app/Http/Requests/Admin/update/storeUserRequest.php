@@ -27,7 +27,19 @@ class storeUserRequest extends parentRequest
     {
         return array_merge(parent::rules(),[
 
-            // 'code_meli'=>[Rule::unique('users')->ignore($this->code_meli)];
-        ])
+            'password'=>'nullable|min:8|confirmed',
+            'code_meli'=>[Rule::unique('users')->ignore($this->user)],
+            'mobile_number'=>[Rule::unique('users')->ignore($this->user)],
+            'image'=>'required|mimes:jpg,png|size:8192'
+
+        ]);
+    }
+    public function messages()
+    {
+        return [
+
+            'image.*'=>'فایل باید دارای فرمت  JPG، PNG مجاز باشن.'
+        ];
+
     }
 }
