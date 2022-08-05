@@ -9,8 +9,10 @@
     <!-- Multi Column with Form Separator -->
     <div class="card mb-4">
         <h5 class="card-header" style="text-align: center">@lang('public.title.member accept office')</h5>
-        <form class="card-body" action="/" method="POST" enctype="multipart/form-data">
+        <form class="card-body" action="{{ route('tasks.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
+
+            <input type="hidden"  value="1" name="status">
             <h6 class="fw-normal">1. @lang('public.title.member add accept office')</h6>
             <div class="row g-3">
                 <div class="col-md-2">
@@ -26,33 +28,6 @@
                         @enderror
                     </span>
                 </div>
-                <div class="col-md-2">
-                    <label class="form-label" for="multicol-country">@lang('public.wizard.task.agent') *</label>
-                    <select id="multicol-Language" name="office_id" class="select2 form-select" data-allow-clear="true">
-                        @foreach ($agents as $agent)
-                            <option value="{{ $type->id }}">{{ $type->title }}</option>
-                        @endforeach
-                    </select>
-                    <span class="error">
-                        @error('office_id')
-                            {{ $message }}
-                        @enderror
-                    </span>
-                </div>
-                <div class="col-md-2">
-                    <label class="form-label" for="multicol-country">@lang('public.wizard.task.market') *</label>
-                    <select id="multicol-Language" name="office_id" class="select2 form-select" data-allow-clear="true">
-                        @foreach ($markets as $market)
-                            <option value="{{ $market->id }}">{{ $market->title }}</option>
-                        @endforeach
-                    </select>
-                    <span class="error">
-                        @error('office_id')
-                            {{ $message }}
-                        @enderror
-                    </span>
-                </div>
-
 
                 <div class="col-md-6">
                     <label class="form-label" for="basic-default-message">@lang('public.wizard.task.detail')</label>

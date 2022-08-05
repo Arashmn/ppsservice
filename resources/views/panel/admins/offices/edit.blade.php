@@ -246,6 +246,14 @@
                         @enderror
                     </span>
                 </div>
+                <div class="col-md-2">
+                    <label class="form-label" for="multicol-country">@lang('public.wizard.base.sex') *</label>
+                    <select id="multicol-country" name="status" class="select2 form-select" data-allow-clear="true">
+                        <option value="">انتخاب</option>
+                        <option value="0">تائید نشده.</option>
+                        <option value="1">تائیدشده. </option>
+                    </select>
+                </div>
                 <div class="col-md-3">
                     <label for="formFile" class="form-label">پروانه کسب</label>
                     <input class="form-control" type="file" name="file" id="formFile" accept=".png, .jpg, .jpeg">

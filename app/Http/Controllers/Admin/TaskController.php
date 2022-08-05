@@ -12,18 +12,18 @@ class TaskController extends Controller
     public function index()
     {
 
-        $officeTimes=officeStatus::all();
-        return view('panel.admins.Tasks.all',compact('officeTimes'));
-
+        $officeTimes = officeStatus::all();
+        return view('panel.admins.Tasks.all', compact('officeTimes'));
     }
 
     public function create()
     {
+        $offices = Office::query()->where('status', 0)->get();
+        return view('panel.admins.Tasks.create', compact('offices'));
+    }
 
-        $offices = Office::query()->where('type', 'office')->get();
-        $agents=office::query()->where('type','agent')->get();
-        $markets=office::query()->Where('type','market')->get();
-        return view('panel.admins.Tasks.create',compact('offices','agents','markets'));
-
+    public function store(Request $request)
+    {
+        dd($request->all());
     }
 }

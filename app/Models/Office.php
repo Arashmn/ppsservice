@@ -34,7 +34,7 @@ class Office extends Model
 
     public function officeStatues()
     {
-         return $this->hasMany(officeStatus::class);
+         return $this->hasOne(officeStatus::class);
     }
 
     public function getCreatedAtAttribute($value)
