@@ -23,10 +23,10 @@ class officeRequest extends FormRequest
      */
     public function rules()
     {
-
-        return array_merge(parentRequest::rules(),[
+        return [
+            'user_id'=>'required|unique:offices',
             'title'=>'required',
-            'management'=>'required',
+            'management'=>'nullable',
             'license_number'=>'required|unique:offices',
             'work_history'=>'nullable',
             'area'=>'nullable|numeric',
@@ -34,12 +34,12 @@ class officeRequest extends FormRequest
             'work_history'=>'nullable|numeric',
             'phone_office'=>'nullable',
             'address_office'=>'nullable',
-            'type'=>'required',
+            'subject'=>'required',
             'is_parking'=>'required',
             'is_owner'=>'required',
-            'file'=>'nullable|mimes:jpeg,png,jpg',
-        ]);
-
+            'file'=>'nullable|mimes:jpg,png|size:8192',
+            'image_file'=>'nullable|mimes:jpg,png|size:8192'
+        ];
 
     }
 }

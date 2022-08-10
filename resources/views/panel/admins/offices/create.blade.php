@@ -11,105 +11,23 @@
         <h5 class="card-header" style="text-align: center">@lang('public.title.member add office')</h5>
         <form class="card-body" action="{{ route('offices.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
-            <h6 class="fw-normal">1. @lang('public.wizard.base.personal info')</h6>
+
+            <input type="hidden" name="type" value="office">
+            <h6 class="fw-normal"></h6>
             <div class="row g-3">
                 <div class="col-md-6">
-                    <label class="form-label" for="multicol-first-name">@lang('public.wizard.base.name') *</label>
-                    <input type="text" name="name" value="{{ old('name') }}" id="multicol-first-name"
-                        class="form-control" placeholder="جان">
-                    <span class="error">
-                        @error('name')
-                            {{ $message }}
-                        @enderror
-                    </span>
-
-                </div>
-                <div class="col-md-6">
-                    <label class="form-label" for="multicol-last-name">@lang('public.wizard.base.family') *</label>
-                    <input type="text" name="family" value="{{ old('family') }}" id="multicol-last-name"
-                        class="form-control" placeholder="اسنو">
-                    <span class="error">
-                        @error('family')
-                            {{ $message }}
-                        @enderror
-                    </span>
-
-                </div>
-                <div class="col-md-6">
-                    <label class="form-label" for="multicol-last-name">@lang('public.wizard.base.father') *</label>
-                    <input type="text" name="father" value="{{ old('father') }}" id="multicol-last-name"
-                        class="form-control" placeholder="اسنو">
-                    <span class="error">
-                        @error('father')
-                            {{ $message }}
-                        @enderror
-                    </span>
-
-                </div>
-                <div class="col-md-6">
-                    <label class="form-label" for="multicol-last-name"> @lang('public.wizard.base.code_meli') *</label>
-                    <input type="text" name="code_meli" value="{{ old('code_meli') }}" id="multicol-last-name"
-                        class="form-control" placeholder="127234567">
-                    <span class="error">
-                        @error('code_meli')
-                            {{ $message }}
-                        @enderror
-                    </span>
-
-                </div>
-                <div class="col-md-6">
-                    <label class="form-label" for="multicol-email">@lang('public.wizard.base.Email')</label>
-                    <div class="input-group input-group-merge">
-                        <span class="input-group-text" id="multicol-email2" dir="ltr">@example.com</span>
-                        <input type="text" name="email" value="{{ old('email') }}"id="multicol-email"
-                            class="form-control text-start" dir="ltr" placeholder="john.doe" aria-label="john.doe"
-                            aria-describedby="multicol-email2">
-                    </div>
-                    <div class="form-text">می‌توانید از حروف، اعداد و نقطه استفاده کنید</div>
-                </div>
-                <div class="col-md-6">
-                    <label class="form-label" for="multicol-country">@lang('public.wizard.base.sex') *</label>
-                    <select id="multicol-country" name="sex" class="select2 form-select" data-allow-clear="true">
-                        <option value="">انتخاب</option>
-                        <option value="male">مرد</option>
-                        <option value="female">زن</option>
+                    <label class="form-label" for="multicol-country">@lang('public.wizard.center.c_admin') *</label>
+                    <select id="multicol-Language" name="user_id" class="select2 form-select" data-allow-clear="true">
+                        @foreach ($users as $user)
+                            <option value="{{ $user->id }}">{{ $user->name .' '.$user->family }}</option>
+                        @endforeach
                     </select>
                     <span class="error">
-                        @error('sex')
+                        @error('user_id')
                             {{ $message }}
                         @enderror
                     </span>
-
                 </div>
-                <div class="col-md-6">
-                    <label class="form-label" for="multicol-phone">@lang('public.wizard.base.mobile') *</label>
-                    <input type="text" name="mobile_number" id="multicol-phone"
-                        class="form-control phone-mask text-start" dir="ltr" placeholder="658 799 8941"
-                        value="{{ old('mobile_number') }}" aria-label="658 799 8941">
-                    <span class="error">
-                        @error('mobile_number')
-                            {{ $message }}
-                        @enderror
-                    </span>
-
-                </div>
-                <div class="col-md-6">
-                    <label class="form-label" for="multicol-birthdate">@lang('public.wizard.base.birthday')</label>
-                    <input type="text" name="birthday" value="{{ old('birthday') }}" id="multicol-birthdate"
-                        class="form-control dob-picker" placeholder="YYYY/MM/DD">
-                </div>
-
-
-                <div class="col-md-6">
-                    <label class="form-label" for="basic-default-message">@lang('public.wizard.base.address')</label>
-                    <textarea id="basic-default-message" name="address" class="form-control" placeholder="متن پیام را اینجا بنویسید"></textarea>
-                </div>
-
-
-            </div>
-            <hr class="my-4 mx-n4">
-            <h6 class="fw-normal">2. @lang('public.wizard.center.center info')</h6>
-            <div class="row g-3">
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-first-name">@lang('public.wizard.center.c_title') * </label>
                     <input type="text" name="title" value="{{ old('title') }}" id="multicol-first-name"
@@ -121,17 +39,7 @@
                     </span>
 
                 </div>
-                <div class="col-md-6">
-                    <label class="form-label" for="multicol-last-name">@lang('public.wizard.center.c_admin')</label>
-                    <input type="text" name="management" value="{{ old('management') }}" id="multicol-last-name"
-                        class="form-control" placeholder="رضا">
-                    <span class="error">
-                        @error('management')
-                            {{ $message }}
-                        @enderror
-                    </span>
 
-                </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-last-name">@lang('public.wizard.center.c_license') *</label>
                     <input type="text" name="license_number" value="{{ old('license_number') }}"
@@ -197,7 +105,7 @@
                         @enderror
                     </span>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <label class="form-label" for="multicol-country">@lang('public.wizard.center.c_parking') *</label>
                     <select id="multicol-country" name="is_parking" class="select2 form-select" data-allow-clear="true">
                         <option value="">انتخاب</option>
@@ -239,7 +147,17 @@
                 </div> --}}
                 <div class="col-md-3">
                     <label for="formFile" class="form-label">پروانه کسب</label>
-                    <input class="form-control" type="file" name="file" id="formFile" accept=".png, .jpg, .jpeg">
+                    <input class="form-control" type="file" name="license_file" id="formFile" accept=".jpg">
+                    <div class="form-text">لطفا پروانه کسب را بصورت jpg آپلود کنید.</div>
+                    <span class="error">
+                        @error('file')
+                            {{ $message }}
+                        @enderror
+                    </span>
+                </div>
+                <div class="col-md-3">
+                    <label for="formFile" class="form-label">عکس مراکز</label>
+                    <input class="form-control" type="file" name="image_file" id="formFile" accept=".jpg">
                     <div class="form-text">لطفا پروانه کسب را بصورت jpg آپلود کنید.</div>
                     <span class="error">
                         @error('file')

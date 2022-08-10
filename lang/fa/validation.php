@@ -205,5 +205,6 @@ return [
         "area"=>'متراژ',
         "persian_name"=>'نام فارسی',
         "permissions"=>'دسترسی',
+        "user_id"=>'نام و نام خانوادگی',
     ],
 ];
