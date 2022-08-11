@@ -25,7 +25,8 @@ class CustomerController extends Controller
     public function create()
     {
         $agents=Office::where('type','agent')->get();
-        return view('panel.admins.customers.create',compact('agents'));
+        $roles=Role::all();
+        return view('panel.admins.customers.create',compact('agents','roles'));
     }
 
     public function store(UserRequest $request)

@@ -45,6 +45,7 @@ class OfficeController extends Controller
         ];
 
         $user = User::create($dataUSer);
+        dd($user);
 
 
         $dataIns = [

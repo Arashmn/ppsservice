@@ -47,6 +47,7 @@
                     </div>
                     <div class="form-text">می‌توانید از حروف، اعداد و نقطه استفاده کنید</div>
                 </div>
+
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-country">@lang('public.wizard.base.sex') *</label>
                     <select id="multicol-country" name="sex" class="select2 form-select" data-allow-clear="true">
@@ -59,20 +60,27 @@
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-phone">@lang('public.wizard.base.mobile') *</label>
-                    <input type="text" name="mobile_number " id="multicol-phone" class="form-control phone-mask text-start"
+                    <input type="text" name="mobile_number" id="multicol-phone" class="form-control phone-mask text-start"
                         dir="ltr" placeholder="658 799 8941" aria-label="658 799 8941">
                         <span class="error">@error('mobile_number') {{$message}} @enderror</span>
 
                 </div>
                 <div class="col-md-6">
+                    <label class="form-label" for="multicol-phone">@lang('public.wizard.base.bank_number') *</label>
+                    <input type="text" name="bank_number" id="multicol-phone" class="form-control phone-mask text-start"
+                        dir="ltr" placeholder="IR00000" >
+                        <span class="error">@error('bank_number') {{$message}} @enderror</span>
+
+                </div>
+                <div class="col-md-3">
                     <label class="form-label" for="multicol-birthdate">@lang('public.wizard.base.birthday')</label>
                     <input type="text" name="birthday" id="multicol-birthdate" class="form-control dob-picker"
                         placeholder="YYYY/MM/DD">
                 </div>
 
                 <div class="col-md-3">
-                    <label class="form-label" for="multicol-country">@lang('public.wizard.base.agent')</label>
-                    <select id="multicol-country" name="agent" class="select2 form-select" data-allow-clear="true">
+                    <label class="form-label" for="multicol-language">@lang('public.wizard.base.agent')</label>
+                    <select id="multicol-language" name="agent" class="select2 form-select" data-allow-clear="true">
                         @foreach ($agents as $agent)
                         <option value="">انتخاب</option>
                         <option value="{{ $agent->id }}">{{ $agent->management }}</option>
@@ -80,10 +88,36 @@
 
                     </select>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-6">
                     <label class="form-label" for="multicol-country">@lang('public.wizard.base.moaref')</label>
                     <input type="text" name="moaref" id="multicol-birthdate" class="form-control dob-picker"
                     placeholder="معرف">
+                </div>
+                <div class="col-md-6 select2-primary">
+                    <label class="form-label" for="multicol-language">@lang('public.wizard.base.role') *</label>
+                    <select id="multicol-language" class="select2 form-select" name="roles[]" multiple>
+                        @foreach ($roles as $role)
+                            <option value="{{ $role->name }}">
+                                {{ $role->persian_name }}</option>
+                        @endforeach
+                    </select>
+                    <span class="error">
+                        @error('roles')
+                            {{ $message }}
+                        @enderror
+                    </span>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label" for="multicol-country">@lang('public.wizard.base.type users') *</label>
+                    <select id="multicol-country" name="sex" class="select2 form-select" data-allow-clear="true">
+                        <option value="">انتخاب</option>
+                        <option value="0">عضو</option>
+                        <option value="2">مرکز خدمات</option>
+                        <option value="3">نماینده </option>
+                        <option value="4">بازاریاب</option>
+                    </select>
+                    <span class="error">@error('sex') {{$message}} @enderror</span>
+
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="basic-default-message">@lang('public.wizard.base.address')</label>
@@ -92,57 +126,7 @@
 
 
             </div>
-            <hr class="my-4 mx-n4">
-            <h6 class="fw-normal">2. @lang('public.wizard.car_ins.car info')</h6>
-            <div class="row g-3">
-                <div class="col-md-6">
-                    <label class="form-label" for="multicol-first-name">@lang('public.wizard.car_ins.car_name')</label>
-                    <input type="text" name="car_name" id="multicol-first-name" class="form-control" placeholder=" پژو 206">
-                </div>
-                <div class="col-md-6">
-                    <label class="form-label" for="multicol-last-name">@lang('public.wizard.car_ins.car_year')</label>
-                    <input type="text" name="car_year" id="multicol-last-name" class="form-control" placeholder="1387">
-                </div>
-                <div class="col-md-6">
-                    <label class="form-label" for="multicol-last-name">@lang('public.wizard.car_ins.car_tage')</label>
-                    <input type="text" name="car_tage" id="multicol-last-name" class="form-control" placeholder="114ب14">
-                </div>
 
-                <div class="col-md-6">
-                    <label class="form-label" for="multicol-last-name">@lang('public.wizard.car_ins.car_number') *</label>
-                    <input type="text" name="car_number" id="multicol-last-name" class="form-control" placeholder="شماره ماشین">
-                    <span class="error">@error('car_number') {{$message}} @enderror</span>
-
-                </div>
-                <div class="col-md-6">
-                    <label class="form-label" for="multicol-last-name">@lang('public.wizard.car_ins.car_chassis') *</label>
-                    <input type="text" name="car_chassis" id="multicol-last-name" class="form-control" placeholder="شماره شاسی">
-                    <span class="error">@error('car_chassis') {{$message}} @enderror</span>
-                </div>
-                {{-- ins --}}
-                <div class="col-md-6">
-                    <label class="form-label" for="multicol-last-name">@lang('public.wizard.car_ins.ins_type')</label>
-                    <input type="text"  name="ins_type" id="multicol-last-name" class="form-control">
-                </div>
-                <div class="col-md-6">
-                    <label class="form-label" for="multicol-last-name">@lang('public.wizard.car_ins.ins_company')</label>
-                    <input type="text"  name="ins_company" id="multicol-last-name" class="form-control">
-                </div>
-                <div class="col-md-6">
-                    <label class="form-label" for="multicol-last-name">@lang('public.wizard.car_ins.ins_serialNumber') *</label>
-                    <input type="text" name="ins_serialNumber" id="multicol-last-name" class="form-control">
-                    <span class="error">@error('ins_serialNumber') {{$message}} @enderror</span>
-
-                </div>
-                <div class="col-md-6">
-                    <label class="form-label" for="multicol-last-name">@lang('public.wizard.car_ins.ins_premium')</label>
-                    <input type="text" name="ins_premium" id="multicol-last-name" class="form-control">
-                </div>
-                <div class="col-md-6">
-                    <label class="form-label" for="multicol-last-name">@lang('public.wizard.car_ins.ins_expire')</label>
-                    <input type="text" name="ins_expire" id="multicol-last-name" class="form-control" placeholder="YYYY/MM/DD">
-                </div>
-            </div>
             <div class="pt-4">
                 <button type="submit" class="btn btn-primary me-sm-3 me-1">ثبت</button>
                 <a href="{{ route('customers.index') }}" class="btn btn-label-secondary" >انصراف</a>

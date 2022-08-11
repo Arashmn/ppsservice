@@ -107,6 +107,8 @@ return [
             'code_meli'=>'کد ملی',
             'birthday'=>'تاریخ تولد',
             'address'=>'آدرس',
+            'bank_number'=>'شماره شبا',
+            'type users'=>'نوع کاربر',
             'sex'=>'جنسیت',
             'role'=>'نقش کاربر',
             'Email'=>'ایمیل',
