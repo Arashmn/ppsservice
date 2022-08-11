@@ -51,10 +51,10 @@ class UserController extends Controller
     {
         $roles = Role::all();
 
-        return view('panel.admins.users.edit',compact('user','roles'));
+        return view('panel.admins.offices.edit',compact('user','roles'));
     }
 
-    public function update(storeUserRequest $request,User $user)
+    public function update(storeUserRequest $request)
     {
 
         dd($request->all());

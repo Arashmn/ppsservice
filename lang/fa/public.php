@@ -10,6 +10,7 @@ return [
             'Success role add'=>'نقش جدید ایجاد شد.',
             'Success permission add'=>'دسترسی جدید ایجاد شد.',
             'Success staff add'=>'کارمند جدید ایجاد شد.',
+            'Success staff office'=>'مرکز خدمات جدید ایجاد شد.',
             'Success Title'=>' موفقیت',
         ]
 
@@ -123,6 +124,7 @@ return [
         ],
 
         'car_ins'=>[
+
             'car info'=>'اطلاعات خودرو و بیمه',
             'car_name'=>'نام خودرو',
             'car_tage'=>'شماره پلاک خودرو',
@@ -138,13 +140,14 @@ return [
         ],
 
         'center'=>[
+            'name and family'=>'نام و نام خانوادگی',
             'create center'=>'  افزدون اطلاعات مرکز خدمات',
             'center info'=>'اطلاعات مرکز خدمات',
             'please create personal center info'=>'لطفا اطلاعات مرکز خود را وارد کنید.',
             'c_title'=>'نام مرکز',
             'c_service'=>'خدمت',
             'c_type'=>'نوع خدمت',
-            'c_admin'=>'نام مدیر مرکز',
+            'c_admin'=>'نام نام خانوادگی مدیر مرکز',
             'c_license'=>'شماره پروانه کسب',
             'c_history'=>'سابقه کاری',
             'c_apprentice'=>' تعداد کارگران',

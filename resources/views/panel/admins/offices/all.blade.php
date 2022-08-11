@@ -106,7 +106,7 @@
 
                     <div class="dt-buttons">
 
-                        <a href="" class="dt-button add-new btn btn-primary"><i
+                        <a href="{{ route('offices.create') }}" class="dt-button add-new btn btn-primary"><i
                                 class="bx bx-plus me-0 me-lg-2"></i><span
                                 class="d-none d-lg-inline-block">@lang('table.Dadatable.add office')</span></a>
                     </div>
