@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\UserRequest;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class CustomerController extends Controller
 {
@@ -18,6 +19,7 @@ class CustomerController extends Controller
     {
 
         $customers=User::where('is_staff',0)->get();
+
 
         return view('panel.admins.customers.all',compact('customers'));
 
@@ -33,38 +35,13 @@ class CustomerController extends Controller
     {
 
         $token =  Str::random(8);
-        $dataUSer=[
-            'name'=>$request->name,
-            'family'=>$request->family,
-            'father'=>$request->father,
-            'code_meli'=>$request->code_meli,
-            'email'=>$request->email,
-            'sex'=>$request->sex,
-            'mobile_number'=>$request->mobile_number,
-            'birthday'=>$request->birthday,
-            'is_staff'=>0,
-            'password'=>$token
-        ];
+        $data=$request->all();
+        $data['password']=$token;
+        $data['is_staff']=0;
+        $user=User::create($data);
 
-            $user=User::create($dataUSer);
+        Alert::success(__('public.sweetAlert.success.Success Title'), __('public.sweetAlert.success.Success staff add'));
 
-        $dataIns=[
-            'user_id'=>$user->id,
-            'car_name'=>$request->car_name,
-            'car_year'=>$request->car_year,
-            'car_tage'=>$request->car_tage,
-            'car_number'=>$request->car_number,
-            'car_chassis'=>$request->car_chassis,
-            'ins_type'=>$request->ins_type,
-            'ins_company'=>$request->ins_company,
-            'ins_serialNumber'=>$request->ins_serialNumber,
-            'ins_premium'=>$request->ins_premium,
-            'ins_serialNumber'=>$request->ins_serialNumber,
-            'ins_expire'=>$request->ins_expire,
-
-        ];
-
-        $user=car_ins::create($dataIns);
-
+        return back();
     }
 }

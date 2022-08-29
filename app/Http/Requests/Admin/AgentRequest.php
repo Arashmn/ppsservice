@@ -4,7 +4,7 @@ namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AgentRequest extends FormRequest
+class AgentRequest extends officesRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,15 +23,8 @@ class AgentRequest extends FormRequest
      */
     public function rules()
     {
-        return array_merge(parentRequest::rules(),[
-            'subject'=>'required',
-            'management'=>'required',
+        return array_merge(parent::rules(),[
             'agent_code'=>'required|unique:offices',
-            'work_history'=>'nullable',
-            'apprentice'=>'nullable',
-            'phone_office'=>'nullable',
-            'address_office'=>'nullable',
-            'is_owner'=>'required'
         ]);
     }
 }

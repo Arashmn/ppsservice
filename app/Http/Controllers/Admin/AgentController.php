@@ -2,13 +2,17 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\type;
 use App\Models\User;
 use App\Models\Office;
+use App\Models\companyIns;
 use Illuminate\Support\Str;
+use App\Models\officeStatus;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Requests\Admin\AgentRequest;
-use App\Models\companyIns;
+use App\Http\Requests\Admin\update\agntesRequest;
 
 class AgentController extends Controller
 {
@@ -19,45 +23,32 @@ class AgentController extends Controller
     }
     public function create()
     {
-        $companies=companyIns::all();
-        return view('panel.admins.agents.create',compact('companies'));
-
+        $companies = companyIns::all();
+        $users = User::where('is_staff', 0)->get();
+        return view('panel.admins.agents.create', compact('companies', 'users'));
     }
 
     public function store(AgentRequest $request)
     {
+        Office::create($request->all());
+        Alert::success(__('public.sweetAlert.success.Success Title'), __('public.sweetAlert.success.Success staff office'));
+        return redirect()->back();
+    }
 
-        dd($request->all());
-        $token =  Str::random(8);
-        $dataUSer=[
-            'name'=>$request->name,
-            'family'=>$request->family,
-            'father'=>$request->father,
-            'code_meli'=>$request->code_meli,
-            'email'=>$request->email,
-            'sex'=>$request->sex,
-            'mobile_number'=>$request->mobile_number,
-            'birthday'=>$request->birthday,
-            'is_staff'=>0,
-            'password'=>$token
-        ];
+    public function show(office $agent)
+    {
+        $officeStatus = officeStatus::where('office_id', $agent->id)->get();
+        return view('panel.admins.agents.show', compact('agent','officeStatus'));
+    }
 
-            $user=User::create($dataUSer);
+    public  function  edit(office $agent)
+    {
+        $types=type::all();
+        return view('panel.admins.agents.edit',compact('agent','types'));
+    }
 
-        $dataIns=[
-            'user_id'=>$user->id,
-            'subject'=>$request->subject,
-            'title'=>$request->title,
-            'management'=>$request->management,
-            'agent_code'=>$request->agent_code,
-            'work_history'=>$request->work_history,
-            'is_owner'=>$request->is_owner,
-            'phone_office'=>$request->phone_office,
-            'address_office'=>$request->address_office,
-            'file'=>$request->file,
-        ];
-
-        $user=Office::create($dataIns);
-
+    public function update(agntesRequest $request)
+    {
+         dd($request->all());
     }
 }

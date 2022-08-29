@@ -3,8 +3,7 @@
 @section('vendor-css')
 
     <link rel="stylesheet" href="{{ asset('assets/panel/vendor/libs/datatables-bs5/datatables.bootstrap5.css') }}">
-    <link rel="stylesheet"
-        href="{{ asset('assets/panel/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/panel/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/panel/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.css') }}">
 @endsection
 @section('content')
@@ -54,17 +53,39 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($agents as $agent)
+                        @foreach ($agents as $key=>$agent)
                             <tr>
-                                <td>{{ $customer->id }}</td>
-                                <td>{{ $customer->subject }}</td>
-                                <td>{{ $customer->managemen  }}</td>
-                                <td>{{ $customer->agent_code    }}</td>
-                                <td>{{ $customer->work_history }}</td>
-                                <td>{{ $customer->accept }}</td>
-                                <td>{{ $customer->actions }}</td>
-                                <td>ss</td>
-                            </tr>
+                                <td>{{ $key + 1 }}</td>
+                                <td>{{ $agent->id }}</td>
+                                <td>{{ $agent->title }}</td>
+                                <td>{{ $agent->subject }}</td>
+                                <td>{{ $agent->user->name . ' ' . $agent->user->family }}</td>
+                                <td>{{ $agent->license_number }}</td>
+                                <td>{{ $agent->work_history . ' ' . 'سال' }}</td>
+                                <td>{{ $agent->created_at }}</td>
+                                <td>
+                                    @if ($agent->accept == 'Accept')
+                                        {{ 'تائید شد.' }}
+                                    @else
+                                        {{ 'تائید نشده ' }}
+                                    @endif
+                                <td>
+                                    <div class="dropdown dropdown-inline mr-4">
+                                        <button type="button" class="btn p-0 dropdown-toggle hide-arrow show"
+                                            data-bs-toggle="dropdown" aria-expanded="true">
+                                            <i class="bx bx-dots-vertical-rounded"></i>
+                                        </button>
+                                        <div class="dropdown-menu show" data-popper-placement="bottom-start"
+                                            style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(106px, 27px);">
+                                            <a href="{{ route('agents.show', $agent->id) }}"
+                                                class="dropdown-item">نمایش</a>
+                                            <a href="{{ route('agents.edit', $agent->id) }}" class="dropdown-item"
+                                                class="bx bx-edit-alt me-1">ویرایش</a>
+                                            <a href="/" class="dropdown-item" class="bx bx-trash me-1">حذف</a>
+
+                                        </div>
+                                    </div>
+                                </td>
                         @endforeach
                     </tbody>
 
@@ -133,4 +154,4 @@
     </script>
 
     {{-- <script src="{{ asset('assets/
-    @endsection
+        @endsection

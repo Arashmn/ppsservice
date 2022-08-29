@@ -11,6 +11,7 @@
         <h5 class="card-header" style="text-align: center">@lang('public.title.member add user')</h5>
         <form class="card-body" action="{{ route('customers.store') }}" method="POST">
             @csrf
+            <x-validations/>
             <h6 class="fw-normal">1. @lang('public.wizard.base.personal info')</h6>
             <div class="row g-3">
                 <div class="col-md-6">

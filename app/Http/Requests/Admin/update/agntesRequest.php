@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Requests\Admin;
+namespace App\Http\Requests\Admin\update;
 
+use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
-class UserRequest extends parentRequest
+class agntesRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,9 +24,9 @@ class UserRequest extends parentRequest
      */
     public function rules()
     {
-
-        return array_merge(parent::rules(),[
-            'roles'=>'nullable'
-        ]);
+        return [
+            'agent_code'=> 'required',Rule::unique('offices')->ignore($this->office),
+            'file'=>'nullable|mimes:jpg,png|size:8192',
+        ];
     }
 }
