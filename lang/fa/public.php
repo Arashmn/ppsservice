@@ -118,6 +118,7 @@ return [
             'agent'=>'نماینده فروش',
             'moaref'=>'نام معرف',
             'password'=>'رمز عبور',
+            'confirmation'=>'تایید نهایی',
             'confirm-password'=>'تکرار رمز عبور',
             'btn back'=>'قبلی',
             'btn back index'=>'بازگشت به صفحه قبل',

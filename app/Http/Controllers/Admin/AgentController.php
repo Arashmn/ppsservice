@@ -13,6 +13,7 @@ use App\Http\Controllers\Controller;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Requests\Admin\AgentRequest;
 use App\Http\Requests\Admin\update\agntesRequest;
+use Carbon\Carbon;
 
 class AgentController extends Controller
 {
@@ -38,17 +39,20 @@ class AgentController extends Controller
     public function show(office $agent)
     {
         $officeStatus = officeStatus::where('office_id', $agent->id)->get();
-        return view('panel.admins.agents.show', compact('agent','officeStatus'));
+        return view('panel.admins.agents.show', compact('agent', 'officeStatus'));
     }
 
     public  function  edit(office $agent)
     {
-        $types=type::all();
-        return view('panel.admins.agents.edit',compact('agent','types'));
+        $companies = companyIns::all();
+        return view('panel.admins.agents.edit', compact('agent', 'companies'));
     }
 
-    public function update(agntesRequest $request)
+    public function update(agntesRequest $request, office $agent)
     {
-         dd($request->all());
+
+        $agent->update($request->all());
+        Alert::success(__('public.sweetAlert.success.Success Title'), __('public.sweetAlert.success.Success staff office'));
+        return redirect(route('agents.index'));
     }
 }

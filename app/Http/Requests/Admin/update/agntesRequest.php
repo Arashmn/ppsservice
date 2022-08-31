@@ -25,8 +25,7 @@ class agntesRequest extends FormRequest
     public function rules()
     {
         return [
-            'agent_code'=> 'required',Rule::unique('offices')->ignore($this->office),
-            'file'=>'nullable|mimes:jpg,png|size:8192',
+            'file' => 'nullable|mimes:jpg,png|size:8192',
         ];
     }
 }
